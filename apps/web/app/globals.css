@@ -1,0 +1,617 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   WebForm Verse — Spider-Tech Theme
+   Deep black + Spider red + Metallic silver + Chrome highlights.
+   Premium cinematic spider-web connected workflow system.
+   ============================================================ */
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 349 97% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 11%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 349 97% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 27%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 349 97% 43%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "kern", "liga", "calt";
+    -webkit-font-smoothing: antialiased;
+    background: #050505;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bebas Neue", "Anton", system-ui, sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  ::selection {
+    background: rgba(217, 4, 41, 0.4);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1A1A1A, #111111);
+    border-radius: 4px;
+    border: 1px solid #222;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #D90429, #8B0000);
+  }
+
+  :focus-visible {
+    outline: 2px solid #D90429;
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   Spider-Web Atmosphere — fixed background layers
+   ============================================================ */
+
+.verse-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.verse-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(rgba(217, 4, 41, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 4, 41, 0.3) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.verse-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(5, 5, 5, 0.8) 100%
+  );
+}
+
+.verse-halftone {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.008;
+  background-image: radial-gradient(circle, #fff 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+
+.verse-web-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  max-width: 1000px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.025;
+}
+
+/* ============================================================
+   Spider-Web Structures
+   ============================================================ */
+
+.spider-web-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spider-web-bg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%);
+  background:
+    conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(217, 4, 41, 0.03) 5deg, transparent 10deg, transparent 45deg, rgba(217, 4, 41, 0.03) 50deg, transparent 55deg, transparent 90deg, rgba(217, 4, 41, 0.03) 95deg, transparent 100deg, transparent 135deg, rgba(217, 4, 41, 0.03) 140deg, transparent 145deg, transparent 180deg, rgba(217, 4, 41, 0.03) 185deg, transparent 190deg, transparent 225deg, rgba(217, 4, 41, 0.03) 230deg, transparent 235deg, transparent 270deg, rgba(217, 4, 41, 0.03) 275deg, transparent 280deg, transparent 315deg, rgba(217, 4, 41, 0.03) 320deg, transparent 325deg);
+}
+
+.spider-web-bg::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 10%, transparent 10.5%, rgba(217, 4, 41, 0.04) 11%, transparent 11.5%),
+    radial-gradient(circle, transparent 20%, transparent 20.5%, rgba(217, 4, 41, 0.035) 21%, transparent 21.5%),
+    radial-gradient(circle, transparent 30%, transparent 30.5%, rgba(217, 4, 41, 0.03) 31%, transparent 31.5%),
+    radial-gradient(circle, transparent 40%, transparent 40.5%, rgba(217, 4, 41, 0.025) 41%, transparent 41.5%),
+    radial-gradient(circle, transparent 50%, transparent 50.5%, rgba(217, 4, 41, 0.02) 51%, transparent 51.5%);
+}
+
+/* ============================================================
+   Reusable theme utilities
+   ============================================================ */
+
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(217, 4, 41, 0.6), 0 0 40px rgba(217, 4, 41, 0.3);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 20px rgba(217, 4, 41, 0.6), 0 0 40px rgba(217, 4, 41, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 16px rgba(192, 192, 192, 0.4);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 16px rgba(139, 0, 0, 0.5);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 16px rgba(192, 192, 192, 0.4);
+}
+
+.border-glow-red {
+  box-shadow: 0 0 20px rgba(217, 4, 41, 0.25), inset 0 0 20px rgba(217, 4, 41, 0.05);
+}
+
+/* Glass card — metallic black glass */
+.glass-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+  border: 1px solid rgba(40, 40, 40, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(217, 4, 41, 0.2), rgba(192, 192, 192, 0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Node card — web-connected card */
+.node-card {
+  background: rgba(11, 11, 11, 0.9);
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  border-top: 2px solid #D90429;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.node-card:hover {
+  border-color: rgba(217, 4, 41, 0.5);
+  box-shadow:
+    0 0 30px rgba(217, 4, 41, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.node-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217, 4, 41, 0.6), transparent);
+}
+
+/* Scroll card — backward compat */
+.scroll-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+  border: 1px solid rgba(40, 40, 40, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(217, 4, 41, 0.15), rgba(192, 192, 192, 0.08), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Web divider — glowing red strand */
+.web-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8B0000,
+    #D90429,
+    #FF1744,
+    #D90429,
+    #8B0000,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: strandGlow 4s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(217, 4, 41, 0.3);
+}
+
+.chakra-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8B0000,
+    #D90429,
+    #FF1744,
+    #D90429,
+    #8B0000,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: strandGlow 4s ease-in-out infinite;
+}
+
+@keyframes strandGlow {
+  0%, 100% { background-position: 0% 50%; opacity: 0.6; }
+  50% { background-position: 100% 50%; opacity: 1; }
+}
+
+/* CTA button — metallic spider-tech */
+.btn-verse {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-verse::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: translateY(-50%) skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-verse:hover::before {
+  left: 130%;
+}
+
+.btn-verse:hover {
+  box-shadow:
+    0 0 30px rgba(217, 4, 41, 0.5),
+    0 0 60px rgba(217, 4, 41, 0.2);
+}
+
+.btn-rasengan {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-rasengan::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: translateY(-50%) skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-rasengan:hover::before {
+  left: 130%;
+}
+
+.btn-rasengan:hover {
+  box-shadow:
+    0 0 30px rgba(217, 4, 41, 0.5),
+    0 0 60px rgba(217, 4, 41, 0.2);
+}
+
+/* Chrome sweep effect */
+.chrome-sweep {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(192, 192, 192, 0.08) 30%,
+    rgba(255, 255, 255, 0.05) 35%,
+    transparent 40%
+  );
+  background-size: 200% 100%;
+  animation: chrome-sweep 3s linear infinite;
+}
+
+@keyframes chrome-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Neon underline */
+.neon-underline {
+  position: relative;
+}
+
+.neon-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D90429;
+  box-shadow: 0 0 8px rgba(217, 4, 41, 0.6);
+  transition: width 0.3s ease;
+}
+
+.neon-underline:hover::after {
+  width: 100%;
+}
+
+/* Web corner decorations */
+.web-corners {
+  position: relative;
+}
+
+.web-corners::before,
+.web-corners::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.web-corners::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid rgba(217, 4, 41, 0.4);
+  border-left: 1px solid rgba(217, 4, 41, 0.4);
+}
+
+.web-corners::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(217, 4, 41, 0.4);
+  border-right: 1px solid rgba(217, 4, 41, 0.4);
+}
+
+/* ============================================================
+   Spider-Man theme — extended keyframes
+   ============================================================ */
+
+@keyframes hanging-sway {
+  0%, 100% { transform: rotate(-4deg) translateX(-4px); }
+  50%      { transform: rotate(4deg)  translateX(4px); }
+}
+
+@keyframes web-spread-in {
+  0%   { opacity: 0; transform: scale(0.85); }
+  60%  { opacity: 1; }
+  100% { opacity: 0.18; transform: scale(1); }
+}
+
+@keyframes strand-elastic {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-3px); }
+  60%  { transform: translateY(2px); }
+  80%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes hero-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.015); }
+}
+
+@keyframes swing-arc {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(8deg); }
+}
+
+@keyframes crawl-breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%      { transform: scale(1.02) translateY(-2px); }
+}
+
+@keyframes shooter-lean {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+@keyframes strand-glow-pulse {
+  0%, 100% { opacity: 0.06; }
+  50%      { opacity: 0.12; }
+}
+
+@keyframes strand-draw-keyframe {
+  0%   { stroke-dashoffset: var(--strand-len, 600); }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes web-vibrate-x {
+  0%, 100% { transform: translateY(0); }
+  20%      { transform: translateY(-2px); }
+  40%      { transform: translateY(2px); }
+  60%      { transform: translateY(-1px); }
+  80%      { transform: translateY(1px); }
+}
+
+/* Connecting strand draw-on — used inline by ConnectingStrand SVG */
+.strand-draw {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: strand-draw-keyframe 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+}
+
+.strand-draw-staggered-1 { animation-delay: 0.2s; }
+.strand-draw-staggered-2 { animation-delay: 0.4s; }
+.strand-draw-staggered-3 { animation-delay: 0.6s; }
+.strand-draw-staggered-4 { animation-delay: 0.8s; }
+
+/* Web vibrate — for hover-triggered strand wobble */
+.web-vibrate-target {
+  animation: web-vibrate-x 0.3s ease-in-out 3;
+}
+
+/* Web thread on sidebar right edge */
+.sidebar-web-edge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+.sidebar-web-edge::before,
+.sidebar-web-edge::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.sidebar-web-edge::before { top: 25%; }
+.sidebar-web-edge::after  { top: 75%; }
+
+/* White web connector dot — pairs with form rows */
+.web-connector-dot {
+  position: relative;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.7),
+              0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================================
+   Reduced-motion preference — disable showy animations
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hanging-sway,
+  .animate-swing-arc,
+  .animate-hero-breathe,
+  .animate-shooter-lean,
+  .animate-crawl-breathe,
+  .animate-web-spread-in,
+  .animate-web-pulse,
+  .animate-core-spin,
+  .animate-chrome-sweep,
+  .animate-spin-slow,
+  .animate-node-float,
+  .animate-glow-breathe,
+  .animate-strand-flow,
+  .strand-draw,
+  .web-vibrate-target {
+    animation: none !important;
+  }
+
+  canvas.verse-bg { display: none; }
+}
