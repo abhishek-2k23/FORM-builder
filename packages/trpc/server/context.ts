@@ -1,7 +1,14 @@
+export type ClerkProfile = {
+  email: string;
+  fullName: string | null;
+  profileImageUrl: string | null;
+};
+
 export type BaseContextInput = {
   userId: string | null;
   requestId?: string;
   ipAddress?: string;
+  getClerkProfile?: (clerkId: string) => Promise<ClerkProfile | null>;
 };
 
 export function createBaseContext(input: BaseContextInput) {
@@ -13,6 +20,7 @@ export function createBaseContext(input: BaseContextInput) {
     },
     requestId: input.requestId ?? "unknown",
     ipAddress: input.ipAddress,
+    getClerkProfile: input.getClerkProfile,
   };
 }
 

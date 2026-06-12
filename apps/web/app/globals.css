@@ -468,13 +468,8 @@
 }
 
 /* ============================================================
-   Spider-Man theme — extended keyframes
+   Extended keyframes
    ============================================================ */
-
-@keyframes hanging-sway {
-  0%, 100% { transform: rotate(-4deg) translateX(-4px); }
-  50%      { transform: rotate(4deg)  translateX(4px); }
-}
 
 @keyframes web-spread-in {
   0%   { opacity: 0; transform: scale(0.85); }
@@ -488,26 +483,6 @@
   60%  { transform: translateY(2px); }
   80%  { transform: translateY(-1px); }
   100% { transform: translateY(0); }
-}
-
-@keyframes hero-breathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.015); }
-}
-
-@keyframes swing-arc {
-  0%, 100% { transform: rotate(-8deg); }
-  50%      { transform: rotate(8deg); }
-}
-
-@keyframes crawl-breathe {
-  0%, 100% { transform: scale(1) translateY(0); }
-  50%      { transform: scale(1.02) translateY(-2px); }
-}
-
-@keyframes shooter-lean {
-  0%, 100% { transform: rotate(-2deg); }
-  50%      { transform: rotate(2deg); }
 }
 
 @keyframes strand-glow-pulse {
@@ -595,11 +570,6 @@
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-hanging-sway,
-  .animate-swing-arc,
-  .animate-hero-breathe,
-  .animate-shooter-lean,
-  .animate-crawl-breathe,
   .animate-web-spread-in,
   .animate-web-pulse,
   .animate-core-spin,

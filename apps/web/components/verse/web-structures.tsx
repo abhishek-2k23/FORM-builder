@@ -11,7 +11,7 @@ import { useId } from "react";
  *   - full-screen:    giant web spanning entire hero background
  *   - connecting:     elastic single strand between two points
  *   - radial:         circular web (frames the central emblem)
- *   - hanging-thread: single vertical thread (pairs with HangingPose)
+ *   - hanging-thread: single vertical thread
  */
 export type WebType =
   | "corner"

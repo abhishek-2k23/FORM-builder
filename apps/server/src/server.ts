@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { clerkMiddleware, getAuth } from "@clerk/express";
+import { clerkClient, clerkMiddleware, getAuth } from "@clerk/express";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import type { CreateExpressContextOptions } from "@trpc/server/adapters/express";
 import { generateOpenApiDocument, createOpenApiExpressMiddleware } from "trpc-to-openapi";
@@ -41,7 +41,13 @@ app.use(
     origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "x-request-id", "x-trpc-source"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "x-request-id",
+      "x-trpc-source",
+      "ngrok-skip-browser-warning",
+    ],
     exposedHeaders: ["x-request-id", "RateLimit-Limit", "RateLimit-Remaining", "RateLimit-Reset"],
   }),
 );
@@ -103,6 +109,18 @@ const createContext = ({ req }: CreateExpressContextOptions) =>
     ipAddress: (req.headers["x-forwarded-for"] as string | undefined)?.split(",")[0]?.trim()
       ?? req.ip
       ?? "unknown",
+    getClerkProfile: async (clerkId) => {
+      const clerkUser = await clerkClient.users.getUser(clerkId);
+      const primaryEmail = clerkUser.emailAddresses.find(
+        (e) => e.id === clerkUser.primaryEmailAddressId,
+      )?.emailAddress;
+      if (!primaryEmail) return null;
+      return {
+        email: primaryEmail,
+        fullName: [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(" ") || null,
+        profileImageUrl: clerkUser.imageUrl ?? null,
+      };
+    },
   });
 
 app.use("/api", generalRateLimit);
@@ -112,8 +130,8 @@ app.use("/api/authentication", authRateLimit);
 app.use("/api/public.submit", submissionRateLimit);
 
 app.use(
-  "/api",
-  createOpenApiExpressMiddleware({
+  "/api/trpc",
+  trpcExpress.createExpressMiddleware({
     router: serverRouter,
     createContext,
   }),
@@ -121,7 +139,7 @@ app.use(
 
 app.use(
   "/api",
-  trpcExpress.createExpressMiddleware({
+  createOpenApiExpressMiddleware({
     router: serverRouter,
     createContext,
   }),

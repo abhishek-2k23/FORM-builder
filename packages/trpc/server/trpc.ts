@@ -22,7 +22,20 @@ export const protectedProcedure = tRPCContext.procedure.use(async ({ ctx, next }
     });
   }
 
-  const user = await userService.getUserByClerkId(ctx.auth.userId);
+  let user = await userService.getUserByClerkId(ctx.auth.userId);
+
+  if (!user && ctx.getClerkProfile) {
+    const profile = await ctx.getClerkProfile(ctx.auth.userId);
+    if (profile) {
+      user = await userService.upsertUser({
+        clerkId: ctx.auth.userId,
+        email: profile.email,
+        fullName: profile.fullName,
+        profileImageUrl: profile.profileImageUrl,
+      });
+    }
+  }
+
   if (!user) {
     throw new TRPCError({
       code: "NOT_FOUND",

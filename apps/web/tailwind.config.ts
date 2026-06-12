@@ -125,10 +125,6 @@ const config: Config = {
           "0%, 100%": { opacity: "0.6" },
           "50%": { opacity: "1" },
         },
-        "hanging-sway": {
-          "0%, 100%": { transform: "rotate(-4deg) translateX(-4px)" },
-          "50%": { transform: "rotate(4deg) translateX(4px)" },
-        },
         "web-spread-in": {
           "0%": { opacity: "0", transform: "scale(0.85)" },
           "60%": { opacity: "1" },
@@ -139,22 +135,6 @@ const config: Config = {
           "30%": { transform: "translateY(-3px)" },
           "60%": { transform: "translateY(2px)" },
           "100%": { transform: "translateY(0)" },
-        },
-        "hero-breathe": {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.015)" },
-        },
-        "swing-arc": {
-          "0%, 100%": { transform: "rotate(-8deg)" },
-          "50%": { transform: "rotate(8deg)" },
-        },
-        "crawl-breathe": {
-          "0%, 100%": { transform: "scale(1) translateY(0)" },
-          "50%": { transform: "scale(1.02) translateY(-2px)" },
-        },
-        "shooter-lean": {
-          "0%, 100%": { transform: "rotate(-2deg)" },
-          "50%": { transform: "rotate(2deg)" },
         },
         "strand-draw": {
           "0%": { strokeDashoffset: "300" },
@@ -172,13 +152,8 @@ const config: Config = {
         "web-vibrate": "web-vibrate 0.3s ease-in-out",
         "red-pulse": "red-pulse 2s ease-in-out infinite",
         "spin-slow": "core-spin 8s linear infinite",
-        "hanging-sway": "hanging-sway 4s ease-in-out infinite",
         "web-spread-in": "web-spread-in 2s ease-out forwards",
         "strand-elastic": "strand-elastic 0.5s cubic-bezier(0.34,1.56,0.64,1)",
-        "hero-breathe": "hero-breathe 4s ease-in-out infinite",
-        "swing-arc": "swing-arc 2.5s ease-in-out infinite",
-        "crawl-breathe": "crawl-breathe 3s ease-in-out infinite",
-        "shooter-lean": "shooter-lean 3s ease-in-out infinite",
         "strand-draw": "strand-draw 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards",
         // Backward compat
         "chakra-pulse": "web-pulse 3s ease-in-out infinite",

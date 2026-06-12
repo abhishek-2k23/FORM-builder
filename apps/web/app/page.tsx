@@ -16,13 +16,6 @@ import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { NodeDot } from "@/components/verse/icons";
 import { TechSuitEmblem } from "@/components/verse/tech-emblem";
-import {
-  WebShooterPose,
-  HangingPose,
-  CrawlingPose,
-  SwingingPose,
-  StandingPose,
-} from "@/components/verse/spiderman-characters";
 import { WebStructure } from "@/components/verse/web-structures";
 import { NetworkStatus } from "@/components/verse/network-status";
 
@@ -102,7 +95,7 @@ export default async function HomePage() {
       <NetworkStatus />
 
       {/* ==================================================================
-          HERO — Cinematic spider-tech header with web-shooter Spider-Man
+          HERO — Cinematic spider-tech header
           ================================================================== */}
       <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
         {/* Giant full-screen white web background */}
@@ -275,11 +268,6 @@ export default async function HomePage() {
                   />
                 </g>
               </svg>
-
-              {/* Web-shooter Spider-Man on right edge */}
-              <div className="absolute -right-2 top-[40%] -translate-y-1/2">
-                <WebShooterPose size={170} animate />
-              </div>
             </div>
           </div>
         </div>
@@ -293,11 +281,11 @@ export default async function HomePage() {
       </div>
 
       {/* ==================================================================
-          PROBLEM — Hanging Spider-Man on disconnected web threads
+          PROBLEM — Disconnected web threads
           ================================================================== */}
       <section className="relative z-10 container mx-auto px-6 py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          {/* Left — Hanging Spider-Man visual */}
+          {/* Left — Disconnected web visual */}
           <div className="relative flex h-[400px] items-start justify-center">
             <WebStructure
               type="hanging-thread"
@@ -305,9 +293,6 @@ export default async function HomePage() {
               className="absolute top-0 left-1/2 -translate-x-1/2"
               glowIntensity={0.7}
             />
-            <div className="absolute top-[80px] left-1/2 -translate-x-1/2">
-              <HangingPose size={200} animate />
-            </div>
 
             {/* Disconnected (broken) web fragments */}
             <svg
@@ -344,7 +329,7 @@ export default async function HomePage() {
       </section>
 
       {/* ==================================================================
-          SOLUTION — Swinging Spider-Man with connecting strands
+          SOLUTION — Connecting strands
           ================================================================== */}
       <section className="relative z-10 container mx-auto px-6 pb-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -365,7 +350,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          {/* Right — Swinging Spider-Man visual */}
+          {/* Right — Connecting strands visual */}
           <div className="order-1 relative flex h-[420px] items-center justify-center lg:order-2">
             <svg
               className="pointer-events-none absolute inset-0 h-full w-full"
@@ -404,10 +389,6 @@ export default async function HomePage() {
                 />
               </g>
             </svg>
-
-            <div className="relative">
-              <SwingingPose size={240} animate />
-            </div>
           </div>
         </div>
       </section>
@@ -420,7 +401,7 @@ export default async function HomePage() {
       </div>
 
       {/* ==================================================================
-          FEATURES — web-connected grid with crawling Spider-Man
+          FEATURES — web-connected grid
           ================================================================== */}
       <section
         id="features"
@@ -472,11 +453,6 @@ export default async function HomePage() {
               </span>
             </article>
           ))}
-        </div>
-
-        {/* Crawling Spider-Man between rows */}
-        <div className="pointer-events-none mt-12 flex items-center justify-center opacity-90">
-          <CrawlingPose size={170} animate />
         </div>
       </section>
 
@@ -569,7 +545,7 @@ export default async function HomePage() {
       </section>
 
       {/* ==================================================================
-          DEMO CTA — Standing Spider-Man + radial web background
+          DEMO CTA — radial web background
           ================================================================== */}
       <section id="demo" className="relative z-10 container mx-auto px-6 py-24">
         <div className="glass-card web-corners relative overflow-hidden p-10 md:p-16">
@@ -615,7 +591,7 @@ export default async function HomePage() {
             <div className="relative flex justify-center">
               <div className="relative">
                 <div className="absolute inset-0 -z-10 rounded-full bg-spider-red/10 blur-3xl animate-web-pulse" />
-                <StandingPose size={260} animate />
+                <TechSuitEmblem size={220} animate />
               </div>
             </div>
           </div>
