@@ -49,7 +49,7 @@ export default function FormAnalyticsPage({ params }: Props) {
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3 text-center">
         <Loader2 className="h-6 w-6 animate-spin text-konoha-orange" />
         <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
-          Reading the chakra…
+          Reading the signal…
         </p>
       </div>
     );
@@ -57,9 +57,9 @@ export default function FormAnalyticsPage({ params }: Props) {
 
   if (formQuery.isError || !formQuery.data) {
     return (
-      <div className="scroll-card flex flex-col items-center gap-3 p-12 text-center">
+      <div className="glass-card flex flex-col items-center gap-3 p-12 text-center">
         <AlertCircle className="h-6 w-6 text-konoha-akatsuki" />
-        <p className="text-sm text-foreground">Scroll not found.</p>
+        <p className="text-sm text-foreground">Form not found.</p>
         <Link
           href="/dashboard/analytics"
           className="mt-2 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-konoha-orange hover:text-konoha-gold"
@@ -137,13 +137,13 @@ export default function FormAnalyticsPage({ params }: Props) {
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-            Sharingan · 写輪眼
+            Signal
           </p>
           <h1 className="font-heading text-2xl font-black tracking-tight md:text-3xl">
             {form.title}
           </h1>
           <p className="mt-1 text-xs text-muted-foreground">
-            Insights into how shinobi engage with your scroll
+            Insights into how visitors engage with your form
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export default function FormAnalyticsPage({ params }: Props) {
 
       {/* Trend chart + funnel */}
       <div className="mb-8 grid gap-4 lg:grid-cols-3">
-        <div className="scroll-card p-5 lg:col-span-2">
+        <div className="glass-card p-5 lg:col-span-2">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
@@ -196,7 +196,7 @@ export default function FormAnalyticsPage({ params }: Props) {
           )}
         </div>
 
-        <div className="scroll-card p-5">
+        <div className="glass-card p-5">
           <div className="mb-4">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
               Conversion Funnel
@@ -223,13 +223,13 @@ export default function FormAnalyticsPage({ params }: Props) {
 
       {/* Geo + referrers */}
       <div className="mb-8 grid gap-4 md:grid-cols-2">
-        <div className="scroll-card p-5">
+        <div className="glass-card p-5">
           <div className="mb-4">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
               Top Countries
             </p>
             <p className="mt-1 text-[11px] text-muted-foreground">
-              Where the chakra flows from
+              Where the traffic comes from
             </p>
           </div>
           <BarList
@@ -241,13 +241,13 @@ export default function FormAnalyticsPage({ params }: Props) {
           />
         </div>
 
-        <div className="scroll-card p-5">
+        <div className="glass-card p-5">
           <div className="mb-4">
             <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
               Top Referrers
             </p>
             <p className="mt-1 text-[11px] text-muted-foreground">
-              How shinobi found this scroll
+              How visitors found this form
             </p>
           </div>
           <BarList

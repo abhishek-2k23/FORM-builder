@@ -29,15 +29,15 @@ function formatDate(d: string | Date | null): string {
 }
 
 function ownerLabel(owner: ExploreForm["owner"]): string {
-  if (!owner) return "Anonymous shinobi";
+  if (!owner) return "Anonymous creator";
   if (owner.fullName) return owner.fullName;
   // Strip the email domain for display privacy
   const email = owner.email;
-  return email.split("@")[0] ?? "Shinobi";
+  return email.split("@")[0] ?? "Creator";
 }
 
 function ownerInitial(owner: ExploreForm["owner"]): string {
-  const name = owner?.fullName || owner?.email || "S";
+  const name = owner?.fullName || owner?.email || "C";
   return name.trim().charAt(0).toUpperCase();
 }
 
@@ -45,11 +45,11 @@ export function ExploreCard({ form, href }: Props) {
   const target = href ?? `/f/${form.slug}`;
 
   return (
-    <article className="scroll-card group flex h-full flex-col gap-4 p-5 transition-all hover:-translate-y-0.5 hover:border-konoha-orange/60 hover:shadow-[0_0_24px_rgba(255,107,0,0.12)]">
+    <article className="glass-card group flex h-full flex-col gap-4 p-5 transition-all hover:-translate-y-0.5 hover:border-konoha-orange/60 hover:shadow-[0_0_24px_rgba(255,23,68,0.12)]">
       {/* Top: status + slug */}
       <div className="flex items-center justify-between">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-konoha-orange/40 bg-konoha-orange/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.25em] text-konoha-orange">
-          <span className="h-1 w-1 rounded-full bg-konoha-orange shadow-[0_0_4px_#FF6B00]" />
+          <span className="h-1 w-1 rounded-full bg-konoha-orange shadow-[0_0_4px_#FF1744]" />
           Live
         </span>
         <span className="font-mono text-[9px] text-muted-foreground/60">
@@ -100,7 +100,7 @@ export function ExploreCard({ form, href }: Props) {
           rel="noopener noreferrer"
           className="flex h-8 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-konoha-orange hover:text-konoha-orange"
         >
-          Open scroll
+          Open form
           <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
@@ -110,7 +110,7 @@ export function ExploreCard({ form, href }: Props) {
 
 export function ExploreCardSkeleton() {
   return (
-    <div className="scroll-card flex h-full flex-col gap-4 p-5">
+    <div className="glass-card flex h-full flex-col gap-4 p-5">
       <div className="flex items-center justify-between">
         <div className="h-4 w-12 animate-pulse rounded-full bg-konoha-forest/30" />
         <div className="h-3 w-20 animate-pulse rounded bg-konoha-forest/30" />
@@ -127,7 +127,7 @@ export function ExploreCardSkeleton() {
 
 export function ExploreEmpty({ message, hint }: { message: string; hint?: string }) {
   return (
-    <div className="scroll-card flex flex-col items-center gap-3 px-6 py-16 text-center">
+    <div className="glass-card flex flex-col items-center gap-3 px-6 py-16 text-center">
       <ScrollText className="h-8 w-8 text-muted-foreground" />
       <p className="font-heading text-base font-bold tracking-wide">{message}</p>
       {hint && (

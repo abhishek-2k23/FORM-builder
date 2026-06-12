@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertCircle, AlertTriangle, CheckCircle2, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { KonohaLeaf } from "@/components/konoha/leaf";
+import { WebVerseIcon } from "@/components/verse/icons";
 import { FieldRenderer } from "./field";
 import { validateAllFields, validateField } from "../_lib/validate";
 import type { PublicForm, AnswerValue } from "../types";
@@ -76,7 +76,7 @@ export function FormView({ slug }: Props) {
           title: data.title,
           slug: data.slug,
           // If we already had a password attempt, this means it was wrong.
-          error: password ? "Insufficient chakra — wrong seal." : undefined,
+          error: password ? "Incorrect password. Try again." : undefined,
         });
         return;
       }
@@ -222,7 +222,7 @@ export function FormView({ slug }: Props) {
         <div className="flex flex-col items-center gap-3">
           <Loader2 className="h-6 w-6 animate-spin text-konoha-orange" />
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Unsealing scroll…
+            Loading form…
           </p>
         </div>
       </div>
@@ -233,12 +233,12 @@ export function FormView({ slug }: Props) {
   if (state.kind === "not-found") {
     return <CenteredCard
       icon={<AlertCircle className="h-7 w-7 text-konoha-akatsuki" />}
-      title="Scroll not found"
-      description="This scroll doesn't exist, or has been sealed away by the village."
+      title="Form not found"
+      description="This form doesn't exist, or has been taken down."
     />;
   }
 
-  // ----- Locked (password seal) -----
+  // ----- Locked (password protected) -----
   if (state.kind === "locked") {
     return (
       <PasswordGate
@@ -257,9 +257,9 @@ export function FormView({ slug }: Props) {
   // ----- Blocked -----
   if (state.kind === "blocked") {
     const map = {
-      closed: { title: "Scroll sealed", desc: "This scroll is no longer accepting responses." },
-      expired: { title: "Scroll expired", desc: "The deadline has passed." },
-      full: { title: "Quota filled", desc: "This scroll has received the maximum number of responses." },
+      closed: { title: "Form closed", desc: "This form is no longer accepting responses." },
+      expired: { title: "Form expired", desc: "The deadline has passed." },
+      full: { title: "Quota filled", desc: "This form has received the maximum number of responses." },
     } as const;
     const { title, desc } = map[state.reason];
     return <CenteredCard
@@ -273,24 +273,24 @@ export function FormView({ slug }: Props) {
   if (submitted) {
     return (
       <div className="relative mx-auto max-w-2xl px-4 py-16 md:py-24">
-        <div className="scroll-card relative overflow-hidden p-8 text-center md:p-12">
-          <div className="mx-auto mb-6 w-16 animate-chakra-pulse">
-            <KonohaLeaf size={64} color="#FF6B00" />
+        <div className="glass-card relative overflow-hidden p-8 text-center md:p-12">
+          <div className="mx-auto mb-6 w-16 animate-web-pulse">
+            <WebVerseIcon size={64} />
           </div>
           <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-            Mission Accepted · 任務受諾
+            Submitted
           </p>
           <h1 className="font-heading text-3xl font-black text-konoha-orange md:text-4xl text-glow-orange">
-            Scroll delivered.
+            Form submitted.
           </h1>
-          <div className="mx-auto mt-4 h-px w-24 chakra-divider" />
+          <div className="mx-auto mt-4 h-px w-24 web-divider" />
           <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
             {state.form.successMessage ??
-              "Your scroll has been delivered to the Hokage's office. Report at dawn, shinobi."}
+              "Your response has been recorded. Thanks for connecting to the web."}
           </p>
           <div className="mt-8 flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <CheckCircle2 className="h-3.5 w-3.5 text-konoha-orange" />
-            Submission sealed in the village vault
+            Submission saved to the archive
           </div>
         </div>
       </div>
@@ -305,10 +305,10 @@ export function FormView({ slug }: Props) {
       {/* Header */}
       <div className="mb-8 text-center">
         <div className="mx-auto mb-4 w-14">
-          <KonohaLeaf size={56} color="#FF6B00" />
+          <WebVerseIcon size={56} />
         </div>
         <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-          Mission Scroll · 巻物
+          Form
         </p>
         <h1 className="font-heading text-3xl font-black tracking-tight md:text-5xl text-glow-orange">
           {form.title}
@@ -318,11 +318,11 @@ export function FormView({ slug }: Props) {
             {form.description}
           </p>
         )}
-        <div className="mx-auto mt-6 h-px w-24 chakra-divider" />
+        <div className="mx-auto mt-6 h-px w-24 web-divider" />
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} noValidate className="scroll-card p-6 md:p-10">
+      <form onSubmit={handleSubmit} noValidate className="glass-card p-6 md:p-10">
         <div className="space-y-6">
           {form.fields
             .slice()
@@ -386,19 +386,19 @@ export function FormView({ slug }: Props) {
           <button
             type="submit"
             disabled={submit.isPending}
-            className="btn-rasengan flex h-12 min-w-[220px] items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-8 font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_30px_rgba(255,107,0,0.4)] transition-shadow hover:shadow-[0_0_50px_rgba(255,107,0,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="btn-verse flex h-12 min-w-[220px] items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-8 font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_30px_rgba(255,23,68,0.4)] transition-shadow hover:shadow-[0_0_50px_rgba(255,23,68,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submit.isPending ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Sealing…
+                Submitting…
               </>
             ) : (
-              "Submit Scroll"
+              "Submit"
             )}
           </button>
           <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            Powered by Konoha Forms
+            Powered by WebForm Verse
           </p>
         </div>
       </form>
@@ -417,7 +417,7 @@ function CenteredCard({
 }) {
   return (
     <div className="mx-auto max-w-md px-4 py-16 md:py-24">
-      <div className="scroll-card flex flex-col items-center gap-4 p-10 text-center">
+      <div className="glass-card flex flex-col items-center gap-4 p-10 text-center">
         {icon}
         <h1 className="font-heading text-2xl font-black tracking-tight">{title}</h1>
         <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -440,7 +440,7 @@ function PasswordGate({
   const [pw, setPw] = useState("");
   return (
     <div className="mx-auto flex max-w-md flex-col gap-4 px-4 py-16 md:py-24">
-      <div className="scroll-card flex flex-col items-center gap-5 p-8 text-center md:p-10">
+      <div className="glass-card flex flex-col items-center gap-5 p-8 text-center md:p-10">
         <div className="flex h-14 w-14 items-center justify-center rounded-full border border-konoha-akatsuki/40 bg-konoha-akatsuki/10 text-konoha-akatsuki">
           <svg
             width="28"
@@ -461,13 +461,13 @@ function PasswordGate({
 
         <div>
           <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-akatsuki">
-            Password Seal · 封印
+            Password Required
           </p>
           <h1 className="mt-2 font-heading text-2xl font-black tracking-tight md:text-3xl">
             {title}
           </h1>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-            This scroll is sealed. Speak the password to unlock it.
+            This form is password protected. Enter the password to continue.
           </p>
         </div>
 
@@ -483,7 +483,7 @@ function PasswordGate({
             autoFocus
             value={pw}
             onChange={(e) => setPw(e.target.value)}
-            placeholder="Enter the seal"
+            placeholder="Enter password"
             className="h-11 w-full rounded-md border border-konoha-forest/60 bg-konoha-ink/60 px-4 text-center text-sm tracking-[0.3em] text-foreground placeholder:text-muted-foreground/50 focus:border-konoha-orange focus:outline-none focus:ring-2 focus:ring-konoha-orange/20"
           />
           {error && (
@@ -502,9 +502,9 @@ function PasswordGate({
           <button
             type="submit"
             disabled={!pw.trim()}
-            className="btn-rasengan flex h-11 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_24px_rgba(255,107,0,0.35)] hover:shadow-[0_0_40px_rgba(255,107,0,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+            className="btn-verse flex h-11 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_24px_rgba(255,23,68,0.35)] hover:shadow-[0_0_40px_rgba(255,23,68,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
           >
-            Break the seal
+            Unlock
           </button>
         </form>
       </div>

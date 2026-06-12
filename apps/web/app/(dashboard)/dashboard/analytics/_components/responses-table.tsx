@@ -74,7 +74,7 @@ export function ResponsesTable({ formId, fields }: Props) {
 
   return (
     <>
-      <div className="scroll-card overflow-hidden">
+      <div className="glass-card overflow-hidden">
         <div className="border-b border-konoha-forest/40 px-4 py-3">
           <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
             Recent Submissions
@@ -98,7 +98,7 @@ export function ResponsesTable({ formId, fields }: Props) {
             <Inbox className="h-6 w-6 text-muted-foreground" />
             <p className="text-sm text-foreground">No responses yet.</p>
             <p className="max-w-sm text-[11px] leading-relaxed text-muted-foreground">
-              Once shinobi submit your scroll, their answers will appear here.
+              Once visitors submit your form, their answers will appear here.
             </p>
           </div>
         ) : (

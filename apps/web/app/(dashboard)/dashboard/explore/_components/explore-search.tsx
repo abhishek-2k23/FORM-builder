@@ -36,7 +36,7 @@ export function ExploreSearch({ value, onChange, placeholder }: Props) {
         type="search"
         value={local}
         onChange={(e) => setLocal(e.target.value)}
-        placeholder={placeholder ?? "Search the Five Nations…"}
+        placeholder={placeholder ?? "Search public forms…"}
         className="h-11 w-full rounded-md border border-konoha-forest/60 bg-konoha-ink/60 pl-10 pr-10 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-konoha-orange focus:outline-none focus:ring-2 focus:ring-konoha-orange/20"
       />
       {local && (

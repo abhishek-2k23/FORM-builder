@@ -153,7 +153,7 @@ export function FieldRenderer({
                 disabled={disabled}
                 className={`rounded-md border px-3 py-2 text-xs transition-all ${
                   active
-                    ? "border-konoha-orange bg-konoha-orange/15 text-konoha-orange shadow-[0_0_12px_rgba(255,107,0,0.25)]"
+                    ? "border-konoha-orange bg-konoha-orange/15 text-konoha-orange shadow-[0_0_12px_rgba(255,23,68,0.25)]"
                     : "border-konoha-forest/60 bg-konoha-ink/60 text-muted-foreground hover:border-konoha-orange/50 hover:text-foreground"
                 }`}
               >
@@ -180,7 +180,7 @@ export function FieldRenderer({
             disabled={disabled}
             className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border-[1.5px] transition-all ${
               checked
-                ? "border-konoha-orange bg-konoha-orange shadow-[0_0_12px_rgba(255,107,0,0.4)]"
+                ? "border-konoha-orange bg-konoha-orange shadow-[0_0_12px_rgba(255,23,68,0.4)]"
                 : "border-konoha-forest hover:border-konoha-orange/60"
             }`}
           >
@@ -244,7 +244,7 @@ export function FieldRenderer({
         <div className="space-y-3">
           <div className="relative h-2 rounded-full bg-konoha-forest/40">
             <div
-              className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-konoha-chakra to-konoha-orange shadow-[0_0_12px_rgba(255,107,0,0.5)]"
+              className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-konoha-chakra to-konoha-orange shadow-[0_0_12px_rgba(255,23,68,0.5)]"
               style={{ width: `${pct}%` }}
             />
           </div>
@@ -289,7 +289,7 @@ export function FieldRenderer({
             }}
           />
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            {value ? String(value) : "Drop your scroll here"}
+            {value ? String(value) : "Drop your file here"}
           </p>
           <p className="text-[10px] text-muted-foreground/60">Click to browse</p>
         </label>

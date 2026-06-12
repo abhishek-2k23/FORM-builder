@@ -38,7 +38,7 @@ export function KpiRow({ summary, loading }: { summary?: Summary; loading?: bool
     {
       label: "Submissions",
       value: summary?.totalSubmissions ?? 0,
-      hint: "Scrolls sealed",
+      hint: "Forms submitted",
       icon: Send,
       accent: "orange" as const,
     },
@@ -52,7 +52,7 @@ export function KpiRow({ summary, loading }: { summary?: Summary; loading?: bool
     {
       label: "Avg time",
       value: formatDuration(summary?.avgCompletionTimeMs ?? null),
-      hint: "From start to seal",
+      hint: "From start to submit",
       icon: Timer,
       accent: "gold" as const,
     },
@@ -85,7 +85,7 @@ export function KpiRow({ summary, loading }: { summary?: Summary; loading?: bool
         return (
           <div
             key={item.label}
-            className="scroll-card flex flex-col gap-3 p-4"
+            className="glass-card flex flex-col gap-3 p-4"
           >
             <div className="flex items-start justify-between gap-2">
               <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">

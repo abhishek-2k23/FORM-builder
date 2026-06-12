@@ -40,7 +40,7 @@ export function FieldCard({
     <div className="relative" onDragOver={onDragOver} onDrop={onDrop}>
       {/* Drop indicator above */}
       {isDropTarget === "above" && (
-        <div className="absolute -top-1 left-0 right-0 h-0.5 rounded bg-konoha-orange shadow-[0_0_12px_#FF6B00]" />
+        <div className="absolute -top-1 left-0 right-0 h-0.5 rounded bg-konoha-orange shadow-[0_0_12px_#FF1744]" />
       )}
 
       <div
@@ -55,7 +55,7 @@ export function FieldCard({
         }}
         className={`group relative cursor-pointer rounded-md border bg-konoha-ink/40 p-4 transition-all ${
           selected
-            ? "border-konoha-orange shadow-[0_0_24px_rgba(255,107,0,0.18)]"
+            ? "border-konoha-orange shadow-[0_0_24px_rgba(255,23,68,0.18)]"
             : "border-konoha-forest/40 hover:border-konoha-orange/60"
         } ${isDragging ? "opacity-40" : ""}`}
       >
@@ -134,7 +134,7 @@ export function FieldCard({
 
       {/* Drop indicator below */}
       {isDropTarget === "below" && (
-        <div className="absolute -bottom-1 left-0 right-0 h-0.5 rounded bg-konoha-orange shadow-[0_0_12px_#FF6B00]" />
+        <div className="absolute -bottom-1 left-0 right-0 h-0.5 rounded bg-konoha-orange shadow-[0_0_12px_#FF1744]" />
       )}
     </div>
   );

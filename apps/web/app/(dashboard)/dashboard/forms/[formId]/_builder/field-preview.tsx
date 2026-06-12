@@ -142,7 +142,7 @@ export function FieldPreview({ field }: { field: BuilderField }) {
     case "file_upload":
       return (
         <div className="flex h-24 items-center justify-center rounded-md border-2 border-dashed border-konoha-forest/60 bg-konoha-ink/40 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          Drop your scroll here
+          Drop your file here
         </div>
       );
 

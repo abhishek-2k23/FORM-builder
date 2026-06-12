@@ -11,7 +11,7 @@ import {
   Bell,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { KakashiSilhouette } from "@/components/konoha/characters";
+import { PortalRing } from "@/components/verse/icons";
 
 function formatDate(d: string | Date | null | undefined): string {
   if (!d) return "—";
@@ -29,10 +29,10 @@ export default function AccountSettingsPage() {
   const { data: me } = trpc.auth.getMe.useQuery();
 
   const fullName =
-    user?.fullName || me?.fullName || user?.username || "Shinobi";
+    user?.fullName || me?.fullName || user?.username || "Builder";
   const email =
     user?.primaryEmailAddress?.emailAddress || me?.email || "—";
-  const initial = (fullName.trim().charAt(0) || "S").toUpperCase();
+  const initial = (fullName.trim().charAt(0) || "B").toUpperCase();
   const joined = me?.createdAt ?? null;
 
   return (
@@ -43,19 +43,18 @@ export default function AccountSettingsPage() {
           aria-hidden
           className="pointer-events-none absolute -right-6 -top-4 hidden opacity-[0.18] md:block lg:-right-2 lg:opacity-[0.22]"
         >
-          <KakashiSilhouette size={300} />
+          <PortalRing size={300} />
         </div>
 
         <div className="relative max-w-2xl">
           <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-            Account · 自分
+            Account
           </p>
           <h1 className="font-heading text-3xl font-black leading-tight md:text-4xl">
-            Your shinobi profile
+            Your profile
           </h1>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-            Identity, hawk address, notification preferences. Your dossier in
-            the Hokage&apos;s archives.
+            Identity, email, and notification preferences for your account.
           </p>
         </div>
       </section>
@@ -64,7 +63,7 @@ export default function AccountSettingsPage() {
         {/* Main column */}
         <div className="space-y-6">
           {/* Identity card */}
-          <section className="scroll-card p-6">
+          <section className="glass-card p-6">
             <header className="mb-5 flex items-center gap-2">
               <UserIcon className="h-3.5 w-3.5 text-konoha-orange" />
               <h2 className="font-heading text-sm font-bold uppercase tracking-[0.2em]">
@@ -103,7 +102,7 @@ export default function AccountSettingsPage() {
                     {joined && (
                       <p className="mt-0.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
                         <Calendar className="h-3 w-3" />
-                        Joined the village {formatDate(joined)}
+                        Joined {formatDate(joined)}
                       </p>
                     )}
                   </>
@@ -123,7 +122,7 @@ export default function AccountSettingsPage() {
             <p className="mt-5 rounded-md border border-konoha-forest/40 bg-konoha-ink/40 p-3 text-[11px] leading-relaxed text-muted-foreground">
               Name, avatar, email, and password are managed via Clerk. Click{" "}
               <span className="text-konoha-orange">Manage</span> to update them
-              in the secure profile vault.
+              in your secure account profile.
             </p>
           </section>
 
@@ -133,16 +132,16 @@ export default function AccountSettingsPage() {
 
         {/* Side column — sign out */}
         <aside className="flex flex-col gap-4">
-          <section className="scroll-card p-6">
+          <section className="glass-card p-6">
             <header className="mb-3 flex items-center gap-2">
               <LogOut className="h-3.5 w-3.5 text-konoha-akatsuki" />
               <h2 className="font-heading text-sm font-bold uppercase tracking-[0.2em]">
-                Leave the village
+                Sign out
               </h2>
             </header>
             <p className="mb-4 text-[11px] leading-relaxed text-muted-foreground">
-              Sign out of your shinobi account. You&apos;ll be returned to the
-              gate.
+              Sign out of your account. You&apos;ll be returned to the
+              homepage.
             </p>
             <button
               type="button"
@@ -164,7 +163,7 @@ function NotificationsCard() {
   // a real implementation would store them on the user table.
   // This UI is wired to a backend toggle in a follow-up task.
   return (
-    <section className="scroll-card p-6">
+    <section className="glass-card p-6">
       <header className="mb-5 flex items-center gap-2">
         <Bell className="h-3.5 w-3.5 text-konoha-orange" />
         <h2 className="font-heading text-sm font-bold uppercase tracking-[0.2em]">
@@ -173,25 +172,24 @@ function NotificationsCard() {
       </header>
 
       <p className="mb-5 text-[11px] leading-relaxed text-muted-foreground">
-        How you hear from the Hokage&apos;s office about new responses and
-        scroll activity.
+        How you hear about new responses and form activity.
       </p>
 
       <NotificationToggle
         title="New response notifications"
-        description="Email me when someone submits one of my scrolls."
+        description="Email me when someone submits one of my forms."
         storageKey="konoha-notify-responses"
         defaultValue={true}
       />
       <NotificationToggle
         title="Weekly digest"
-        description="A weekly summary of activity across all scrolls."
+        description="A weekly summary of activity across all forms."
         storageKey="konoha-notify-digest"
         defaultValue={false}
       />
       <NotificationToggle
         title="Product updates"
-        description="Hear about new themes, jutsu, and features."
+        description="Hear about new themes and features."
         storageKey="konoha-notify-product"
         defaultValue={false}
       />
@@ -252,7 +250,7 @@ function NotificationToggle({
         onClick={toggle}
         className={`relative h-5 w-9 shrink-0 rounded-full transition-colors disabled:opacity-50 ${
           enabled
-            ? "bg-konoha-orange shadow-[0_0_10px_rgba(255,107,0,0.4)]"
+            ? "bg-konoha-orange shadow-[0_0_10px_rgba(255,23,68,0.4)]"
             : "bg-konoha-forest"
         }`}
       >

@@ -156,7 +156,6 @@ const config: Config = {
         "strand-elastic": "strand-elastic 0.5s cubic-bezier(0.34,1.56,0.64,1)",
         "strand-draw": "strand-draw 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards",
         // Backward compat
-        "chakra-pulse": "web-pulse 3s ease-in-out infinite",
         "leaf-float": "node-float 6s ease-in-out infinite",
         "portal-spin": "core-spin 20s linear infinite",
         shimmer: "chrome-sweep 3s linear infinite",

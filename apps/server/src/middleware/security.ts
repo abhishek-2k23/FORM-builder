@@ -91,7 +91,7 @@ function createRateLimiter(overrides: Partial<RateLimitOptions>) {
 
 export const generalRateLimit = createRateLimiter({
   windowMs: 15 * 60 * 1000,
-  limit: 120,
+  limit: 600,
   keyGenerator: (req) => ipKeyGenerator(req.ip ?? "unknown"),
 });
 

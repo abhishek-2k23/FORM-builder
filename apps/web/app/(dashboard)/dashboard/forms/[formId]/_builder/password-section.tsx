@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Lock, Unlock, Eye, EyeOff, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/components/konoha/toast";
+import { useToast } from "@/components/verse/toast";
 
 interface Props {
   formId: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 /**
- * Konoha-themed password gate for a form.
+ * Password gate for a form.
  * Stores SHA-256 hash server-side via forms.setPassword.
  */
 export function PasswordSection({ formId, hasPassword }: Props) {
@@ -31,7 +31,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
     onError: (err) =>
       toast.push({
         variant: "error",
-        title: "Could not save seal",
+        title: "Could not save password",
         message: err.message?.slice(0, 120) ?? "Try again.",
       }),
   });
@@ -40,7 +40,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
     if (!value || value.length < 4) {
       toast.push({
         variant: "error",
-        title: "Seal too weak",
+        title: "Password too weak",
         message: "Use at least 4 characters.",
       });
       return;
@@ -48,8 +48,8 @@ export function PasswordSection({ formId, hasPassword }: Props) {
     setPassword.mutate({ formId, password: value });
     toast.push({
       variant: "success",
-      title: "Seal applied",
-      message: "Only those who know the seal can submit.",
+      title: "Password set",
+      message: "Only those who know the password can submit.",
     });
   };
 
@@ -57,7 +57,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
     setPassword.mutate({ formId, password: null });
     toast.push({
       variant: "success",
-      title: "Seal removed",
+      title: "Password removed",
       message: "Anyone can submit now.",
     });
     setEditing(true);
@@ -77,7 +77,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
             {hasPassword ? <Lock className="h-3 w-3" /> : <Unlock className="h-3 w-3" />}
           </span>
           <p className="text-sm font-medium text-foreground">
-            Password seal
+            Password protection
           </p>
         </div>
         {hasPassword && !editing && (
@@ -89,8 +89,8 @@ export function PasswordSection({ formId, hasPassword }: Props) {
 
       <p className="text-[11px] leading-relaxed text-muted-foreground">
         {hasPassword
-          ? "Respondents must enter the seal to view and submit this scroll."
-          : "Lock the scroll. Only those with the seal can fill it out."}
+          ? "Respondents must enter the password to view and submit this form."
+          : "Lock this form. Only those with the password can fill it out."}
       </p>
 
       {hasPassword && !editing ? (
@@ -100,7 +100,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
             onClick={() => setEditing(true)}
             className="flex h-9 flex-1 items-center justify-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
           >
-            Change seal
+            Change password
           </button>
           <button
             type="button"
@@ -136,17 +136,17 @@ export function PasswordSection({ formId, hasPassword }: Props) {
               type="button"
               onClick={apply}
               disabled={!value || setPassword.isPending}
-              className="btn-rasengan flex h-9 flex-1 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[10px] uppercase tracking-[0.18em] text-white shadow-[0_0_16px_rgba(255,107,0,0.25)] disabled:opacity-50 disabled:shadow-none"
+              className="btn-verse flex h-9 flex-1 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[10px] uppercase tracking-[0.18em] text-white shadow-[0_0_16px_rgba(255,23,68,0.25)] disabled:opacity-50 disabled:shadow-none"
             >
               {setPassword.isPending ? (
                 <>
                   <Loader2 className="h-3 w-3 animate-spin" />
-                  Sealing
+                  Saving
                 </>
               ) : hasPassword ? (
-                "Save new seal"
+                "Save new password"
               ) : (
-                "Apply seal"
+                "Set password"
               )}
             </button>
             {hasPassword && (

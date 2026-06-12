@@ -2,7 +2,7 @@
 
 /**
  * Hand-rolled SVG charts. No chart library — gives us full control of
- * the Konoha aesthetic and keeps the bundle lean.
+ * the Spider-Verse aesthetic and keeps the bundle lean.
  */
 
 interface DailyPoint {
@@ -69,8 +69,8 @@ export function DailyTrendChart({ data, height = 220 }: { data: DailyPoint[]; he
       >
         <defs>
           <linearGradient id="trend-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#FF6B00" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#FF6B00" stopOpacity="0" />
+            <stop offset="0%" stopColor="#FF1744" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#FF1744" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -109,7 +109,7 @@ export function DailyTrendChart({ data, height = 220 }: { data: DailyPoint[]; he
         <path
           d={linePath}
           fill="none"
-          stroke="#FF6B00"
+          stroke="#FF1744"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -125,13 +125,13 @@ export function DailyTrendChart({ data, height = 220 }: { data: DailyPoint[]; he
             i === Math.floor(points.length / 2);
           return (
             <g key={i}>
-              <circle cx={p.x} cy={p.y} r="3" fill="#FF6B00" />
+              <circle cx={p.x} cy={p.y} r="3" fill="#FF1744" />
               <circle
                 cx={p.x}
                 cy={p.y}
                 r="6"
                 fill="transparent"
-                stroke="#FF6B00"
+                stroke="#FF1744"
                 strokeOpacity="0.3"
               >
                 <title>{`${p.label}: ${p.value}`}</title>
@@ -179,7 +179,7 @@ export function Funnel({
   const stages = [
     {
       label: "Views",
-      sublabel: "Scrolls opened",
+      sublabel: "Forms opened",
       value: views,
       color: "#00D4FF",
     },
@@ -192,10 +192,10 @@ export function Funnel({
     },
     {
       label: "Submissions",
-      sublabel: "Sealed and sent",
+      sublabel: "Submitted",
       value: submissions,
       pct: views > 0 ? Math.round((submissions / views) * 100) : 0,
-      color: "#FF6B00",
+      color: "#FF1744",
     },
   ];
 

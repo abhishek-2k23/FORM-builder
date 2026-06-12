@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/components/konoha/toast";
+import { useToast } from "@/components/verse/toast";
 
 interface Field {
   id: string;
@@ -86,7 +86,7 @@ export function CsvExport({ formId, formTitle, formSlug, fields }: Props) {
         toast.push({
           variant: "error",
           title: "Nothing to export",
-          message: "This scroll has no submissions yet.",
+          message: "This form has no submissions yet.",
         });
         return;
       }
@@ -135,7 +135,7 @@ export function CsvExport({ formId, formTitle, formSlug, fields }: Props) {
 
       toast.push({
         variant: "success",
-        title: "Scroll exported",
+        title: "Form exported",
         message: `${rows.length} ${rows.length === 1 ? "response" : "responses"} archived.`,
       });
     } catch (err) {

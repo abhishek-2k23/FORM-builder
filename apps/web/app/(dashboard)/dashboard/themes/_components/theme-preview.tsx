@@ -95,7 +95,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
           className="text-[8px] uppercase tracking-[0.3em] mb-1"
           style={{ color: colors.primary }}
         >
-          Mission · 任務
+          Form
         </div>
         <div
           className="text-base font-bold leading-tight"
@@ -104,7 +104,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
             fontFamily: fonts?.heading,
           }}
         >
-          Hidden Leaf Scroll
+          WebForm Verse
         </div>
 
         {/* Hairline */}
@@ -121,7 +121,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
             className="mb-1 text-[7px] font-medium uppercase tracking-[0.25em]"
             style={{ color: colors.textMuted }}
           >
-            Shinobi name
+            Your name
           </div>
           <div
             className="h-7 rounded px-2 text-[10px]"
@@ -133,7 +133,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
               lineHeight: "1.5rem",
             }}
           >
-            Naruto Uzumaki
+            Peter Parker
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
             className="mb-1 text-[7px] font-medium uppercase tracking-[0.25em]"
             style={{ color: colors.textMuted }}
           >
-            Mastery
+            Rating
           </div>
           <div className="flex gap-0.5">
             {[1, 2, 3, 4, 5].map((i) => (
@@ -168,7 +168,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
             boxShadow: `0 0 12px ${colors.primary}40`,
           }}
         >
-          Submit Scroll
+          Submit
         </div>
       </div>
 

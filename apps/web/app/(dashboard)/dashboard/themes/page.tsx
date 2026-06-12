@@ -9,7 +9,7 @@ import {
   TerminalSquare,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { NarutoSilhouette } from "@/components/konoha/characters";
+import { HexNode } from "@/components/verse/icons";
 import { ThemePreview } from "./_components/theme-preview";
 
 interface DBTheme {
@@ -48,19 +48,19 @@ export default function ThemeGalleryPage() {
           aria-hidden
           className="pointer-events-none absolute -right-6 -top-4 hidden opacity-[0.15] md:block lg:-right-2 lg:opacity-[0.2]"
         >
-          <NarutoSilhouette size={300} />
+          <HexNode size={300} />
         </div>
 
         <div className="relative max-w-2xl">
           <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-            Themes · 装飾
+            Themes
           </p>
           <h1 className="font-heading text-3xl font-black leading-tight md:text-5xl">
             Theme
             <span className="block text-konoha-orange text-glow-orange">Gallery.</span>
           </h1>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-            Reskin your scrolls with curated visual worlds. Each theme is a
+            Reskin your forms with curated visual worlds. Each theme is a
             complete sensory experience — colors, fonts, the works.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function ThemeGalleryPage() {
 
 function ThemeCard({ theme }: { theme: DBTheme }) {
   return (
-    <article className="scroll-card group flex flex-col overflow-hidden transition-all hover:-translate-y-0.5 hover:border-konoha-orange/60 hover:shadow-[0_0_30px_rgba(255,107,0,0.12)]">
+    <article className="glass-card group flex flex-col overflow-hidden transition-all hover:-translate-y-0.5 hover:border-konoha-orange/60 hover:shadow-[0_0_30px_rgba(255,23,68,0.12)]">
       {/* Tag row */}
       <div className="flex items-center justify-between gap-2 border-b border-konoha-forest/40 px-4 py-2.5">
         <div className="flex items-center gap-2">
@@ -151,7 +151,7 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
             className="mt-1 text-base font-bold tracking-wide text-foreground"
             style={{ fontFamily: theme.fonts.heading }}
           >
-            The shinobi&apos;s path
+            Every form is a node in the web.
           </p>
 
           <div className="mt-3 flex items-baseline justify-between gap-2 text-[9px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -164,17 +164,17 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
             className="mt-1 text-xs leading-relaxed text-muted-foreground"
             style={{ fontFamily: theme.fonts.body }}
           >
-            The Will of Fire flows through every scroll forged in Konoha.
+            A signal travels through every connection in the web.
           </p>
         </div>
 
         {/* Apply CTA */}
         <Link
           href={`/dashboard/forms?theme=${theme.id}`}
-          className="mt-2 flex h-10 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,107,0,0.25)] transition-shadow hover:shadow-[0_0_30px_rgba(255,107,0,0.5)]"
+          className="mt-2 flex h-10 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] transition-shadow hover:shadow-[0_0_30px_rgba(255,23,68,0.5)]"
         >
           <Check className="h-3.5 w-3.5" />
-          Apply to a scroll
+          Apply to a form
           <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
@@ -184,7 +184,7 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
 
 function EmptyState() {
   return (
-    <div className="scroll-card flex flex-col items-center gap-4 px-6 py-16 text-center">
+    <div className="glass-card flex flex-col items-center gap-4 px-6 py-16 text-center">
       <div className="flex h-14 w-14 items-center justify-center rounded-full border border-konoha-orange/40 bg-konoha-ink text-konoha-orange">
         <Palette className="h-6 w-6" />
       </div>
@@ -212,7 +212,7 @@ function EmptyState() {
 
 function ErrorState({ message }: { message: string }) {
   return (
-    <div className="scroll-card flex flex-col items-center gap-3 p-12 text-center">
+    <div className="glass-card flex flex-col items-center gap-3 p-12 text-center">
       <p className="text-sm text-konoha-akatsuki">
         Couldn&apos;t reach the theme gallery.
       </p>

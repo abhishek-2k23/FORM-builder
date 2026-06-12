@@ -15,7 +15,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/components/konoha/toast";
+import { useToast } from "@/components/verse/toast";
 import { AddFieldPopover } from "./add-field-popover";
 import { FieldCard } from "./field-card";
 import { FieldInspector } from "./inspector";
@@ -155,8 +155,8 @@ export function Builder({ formId }: Props) {
       await utils.forms.list.invalidate();
       toast.push({
         variant: "success",
-        title: "Scroll deployed",
-        message: "Your link is live across the village.",
+        title: "Form published",
+        message: "Your link is live on the web.",
       });
     },
     onError: (err) => {
@@ -174,7 +174,7 @@ export function Builder({ formId }: Props) {
       await utils.forms.list.invalidate();
       toast.push({
         variant: "success",
-        title: "Scroll sealed",
+        title: "Form closed",
         message: "No new responses will be accepted.",
       });
     },
@@ -357,7 +357,7 @@ export function Builder({ formId }: Props) {
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin text-konoha-orange" />
-          Unsealing scroll…
+          Loading form…
         </div>
       </div>
     );
@@ -365,8 +365,8 @@ export function Builder({ formId }: Props) {
 
   if (isError || !form) {
     return (
-      <div className="scroll-card p-12 text-center">
-        <p className="text-sm text-konoha-akatsuki">Scroll not found.</p>
+      <div className="glass-card p-12 text-center">
+        <p className="text-sm text-konoha-akatsuki">Form not found.</p>
         <Link
           href="/dashboard/forms"
           className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-konoha-orange hover:text-konoha-gold"
@@ -476,7 +476,7 @@ export function Builder({ formId }: Props) {
               className="flex h-9 items-center gap-2 rounded-md border border-konoha-akatsuki/40 bg-konoha-akatsuki/10 px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-konoha-akatsuki hover:bg-konoha-akatsuki/20 disabled:opacity-50"
             >
               <Lock className="h-3.5 w-3.5" />
-              Seal
+              Close
             </button>
           </>
         ) : (
@@ -484,11 +484,11 @@ export function Builder({ formId }: Props) {
             type="button"
             disabled={publishMutation.isPending || form.fields.length === 0}
             onClick={() => publishMutation.mutate({ formId })}
-            className="btn-rasengan flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,107,0,0.3)] hover:shadow-[0_0_30px_rgba(255,107,0,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
-            title={form.fields.length === 0 ? "Add at least one field first" : isSealed ? "Re-deploy this scroll" : "Deploy scroll"}
+            className="btn-verse flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] hover:shadow-[0_0_30px_rgba(255,23,68,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+            title={form.fields.length === 0 ? "Add at least one field first" : isSealed ? "Re-publish this form" : "Publish form"}
           >
             <Send className="h-3.5 w-3.5" />
-            {publishMutation.isPending ? "Deploying…" : isSealed ? "Re-deploy" : "Deploy"}
+            {publishMutation.isPending ? "Publishing…" : isSealed ? "Re-publish" : "Publish"}
           </button>
         )}
       </div>
@@ -527,7 +527,7 @@ export function Builder({ formId }: Props) {
         {/* Inspector */}
         {!previewMode && (
           <aside className="lg:sticky lg:top-32 lg:self-start">
-            <div className="scroll-card overflow-hidden">
+            <div className="glass-card overflow-hidden">
               {/* Tabs */}
               <div className="flex border-b border-konoha-forest/40">
                 <TabBtn
@@ -545,7 +545,7 @@ export function Builder({ formId }: Props) {
                   onClick={() => setRightPane("settings")}
                 >
                   <SettingsIcon className="h-3 w-3" />
-                  Scroll
+                  Form
                 </TabBtn>
               </div>
 
@@ -605,7 +605,7 @@ function StatusBadge({ status }: { status: BuilderForm["status"] }) {
   const map = {
     draft: { label: "Draft", cls: "bg-konoha-forest/30 text-muted-foreground" },
     published: { label: "Live", cls: "bg-konoha-orange/15 text-konoha-orange" },
-    closed: { label: "Sealed", cls: "bg-konoha-akatsuki/15 text-konoha-akatsuki" },
+    closed: { label: "Closed", cls: "bg-konoha-akatsuki/15 text-konoha-akatsuki" },
     archived: { label: "Archived", cls: "bg-konoha-forest/20 text-muted-foreground" },
   } as const;
   const s = map[status];
@@ -662,12 +662,12 @@ function EditView({
         }}
         className={`mb-4 cursor-pointer rounded-md border bg-konoha-ink/40 p-5 transition-colors ${
           !selectedFieldId
-            ? "border-konoha-orange/60 shadow-[0_0_24px_rgba(255,107,0,0.12)]"
+            ? "border-konoha-orange/60 shadow-[0_0_24px_rgba(255,23,68,0.12)]"
             : "border-konoha-forest/40 hover:border-konoha-orange/40"
         }`}
       >
         <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
-          Scroll Header
+          Form Header
         </p>
         <h2 className="font-heading text-2xl font-black text-foreground">
           {form.title}
@@ -684,10 +684,10 @@ function EditView({
         {form.fields.length === 0 ? (
           <div className="rounded-md border border-dashed border-konoha-forest/60 bg-konoha-ink/30 p-12 text-center">
             <p className="font-heading text-lg font-bold tracking-wide">
-              The scroll is blank
+              This form is empty
             </p>
             <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
-              Every great mission starts with a single question. Add your first
+              Every great form starts with a single question. Add your first
               field to begin.
             </p>
           </div>
@@ -724,7 +724,7 @@ function EditView({
 function PreviewView({ form }: { form: BuilderForm }) {
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="scroll-card p-8">
+      <div className="glass-card p-8">
         <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
           Live Preview · {getFieldDef("short_text").label.length > 0 && form.fields.length} field{form.fields.length === 1 ? "" : "s"}
         </div>
@@ -737,7 +737,7 @@ function PreviewView({ form }: { form: BuilderForm }) {
           </p>
         )}
 
-        <div className="mt-6 h-px chakra-divider" />
+        <div className="mt-6 h-px web-divider" />
 
         <div className="mt-8 flex flex-col gap-6">
           {form.fields.length === 0 ? (
@@ -764,9 +764,9 @@ function PreviewView({ form }: { form: BuilderForm }) {
           <button
             type="button"
             disabled
-            className="btn-rasengan mt-8 flex h-11 w-full items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_20px_rgba(255,107,0,0.3)] disabled:opacity-80"
+            className="btn-verse mt-8 flex h-11 w-full items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-xs uppercase tracking-[0.2em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] disabled:opacity-80"
           >
-            Submit Scroll
+            Submit
           </button>
         )}
       </div>

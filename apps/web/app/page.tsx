@@ -576,7 +576,7 @@ export default async function HomePage() {
                 web in real-time.
               </p>
               <div>
-                <Link href="/naruto">
+                <Link href="/explore">
                   <Button
                     size="lg"
                     className="btn-verse gap-2 bg-spider-red font-heading text-base uppercase tracking-[0.15em] text-white shadow-[0_0_30px_rgba(217,4,41,0.4)]"

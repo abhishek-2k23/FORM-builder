@@ -62,13 +62,13 @@ export function ExploreGrid() {
         <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
           <Map className="h-3 w-3" />
           {isLoading ? (
-            "Charting…"
+            "Loading…"
           ) : (
             <>
               <span className="font-mono tabular-nums text-konoha-orange">
                 {total}
               </span>
-              {total === 1 ? "scroll" : "scrolls"}
+              {total === 1 ? "form" : "forms"}
               {isFiltering && " match your search"}
             </>
           )}
@@ -84,19 +84,19 @@ export function ExploreGrid() {
         </div>
       ) : isError ? (
         <ExploreEmpty
-          message="Couldn't reach the Village Map"
+          message="Couldn't reach the Explore feed"
           hint={(error?.message ?? "Unknown error").slice(0, 120)}
         />
       ) : items.length === 0 ? (
         isFiltering ? (
           <ExploreEmpty
-            message="No scrolls match your search"
-            hint="Try a different keyword, or clear the search to see every public scroll."
+            message="No forms match your search"
+            hint="Try a different keyword, or clear the search to see every public form."
           />
         ) : (
           <ExploreEmpty
-            message="The Village Map is empty"
-            hint="When shinobi publish public scrolls, they'll appear here for the whole village to find."
+            message="The Explore feed is empty"
+            hint="When creators publish public forms, they'll appear here for everyone to find."
           />
         )
       ) : (
@@ -161,9 +161,9 @@ export function ExploreSuggestions({ limit = 3 }: { limit?: number }) {
 
   if (items.length === 0) {
     return (
-      <div className="scroll-card flex items-center gap-3 p-5 text-sm text-muted-foreground">
+      <div className="glass-card flex items-center gap-3 p-5 text-sm text-muted-foreground">
         <ScrollText className="h-4 w-4" />
-        No public scrolls yet — be the first to share one.
+        No public forms yet — be the first to share one.
       </div>
     );
   }

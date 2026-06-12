@@ -33,10 +33,10 @@ export const FIELD_CATALOG: FieldDef[] = [
   // Text group
   { type: "short_text", label: "Short Text", description: "A single line of text", icon: Type, group: "text" },
   { type: "long_text", label: "Long Text", description: "Multi-line answer area", icon: AlignLeft, group: "text" },
-  { type: "email", label: "Email", description: "Validated hawk address", icon: Mail, group: "text" },
+  { type: "email", label: "Email", description: "Validated email address", icon: Mail, group: "text" },
   { type: "number", label: "Number", description: "Integer or decimal", icon: Hash, group: "text" },
-  { type: "phone", label: "Phone", description: "Phone or comm number", icon: Phone, group: "text" },
-  { type: "url", label: "URL", description: "Link to a scroll", icon: Link2, group: "text" },
+  { type: "phone", label: "Phone", description: "Phone or contact number", icon: Phone, group: "text" },
+  { type: "url", label: "URL", description: "Link to a page", icon: Link2, group: "text" },
   { type: "date", label: "Date", description: "Calendar picker", icon: Calendar, group: "text" },
   { type: "time", label: "Time", description: "Hour and minute", icon: Clock, group: "text" },
 
@@ -46,9 +46,9 @@ export const FIELD_CATALOG: FieldDef[] = [
   { type: "checkbox", label: "Checkbox", description: "Yes/no question", icon: CheckSquare, group: "choice" },
 
   // Advanced group
-  { type: "rating", label: "Rating", description: "Star / shuriken rating", icon: Star, group: "advanced" },
+  { type: "rating", label: "Rating", description: "Star rating", icon: Star, group: "advanced" },
   { type: "scale", label: "Scale", description: "Numeric scale (1–10)", icon: SlidersHorizontal, group: "advanced" },
-  { type: "file_upload", label: "File Upload", description: "Receive a scroll file", icon: Upload, group: "advanced" },
+  { type: "file_upload", label: "File Upload", description: "Receive a file", icon: Upload, group: "advanced" },
 ];
 
 export const GROUP_LABELS: Record<FieldDef["group"], string> = {
@@ -89,7 +89,7 @@ export function getFieldDefaults(type: FieldType): {
     case "long_text":
       return { label: "Long answer", placeholder: "Write the details…" };
     case "email":
-      return { label: "Email address", placeholder: "ninja@konohagakure.jp" };
+      return { label: "Email address", placeholder: "you@example.com" };
     case "number":
       return { label: "Number", placeholder: "0" };
     case "phone":
@@ -131,7 +131,7 @@ export function getFieldDefaults(type: FieldType): {
         maxLabel: "Absolutely",
       };
     case "file_upload":
-      return { label: "Upload your scroll" };
+      return { label: "Upload your file" };
     default:
       return { label: "Untitled" };
   }

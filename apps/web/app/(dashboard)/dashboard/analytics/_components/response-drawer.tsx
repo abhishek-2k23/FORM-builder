@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { X, Trash2, Mail, Globe, Timer, Calendar } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/components/konoha/toast";
+import { useToast } from "@/components/verse/toast";
 
 interface Field {
   id: string;
@@ -94,7 +94,7 @@ export function ResponseDrawer({ open, onClose, formId, responseId, fields }: Pr
       toast.push({
         variant: "success",
         title: "Response purged",
-        message: "It's gone from the village vault.",
+        message: "It's gone from the archive.",
       });
       onClose();
     },
@@ -141,7 +141,7 @@ export function ResponseDrawer({ open, onClose, formId, responseId, fields }: Pr
         <div className="flex items-start justify-between border-b border-konoha-forest/40 px-6 py-5">
           <div>
             <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
-              Submission · 提出
+              Submission
             </p>
             <h2 className="mt-1 font-heading text-lg font-bold tracking-tight">
               Response details
@@ -216,7 +216,7 @@ export function ResponseDrawer({ open, onClose, formId, responseId, fields }: Pr
             <button
               type="button"
               onClick={() => {
-                if (confirm("Purge this response from the village vault? This cannot be undone.")) {
+                if (confirm("Purge this response from the archive? This cannot be undone.")) {
                   deleteResponse.mutate({ formId, responseId: response.id });
                 }
               }}

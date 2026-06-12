@@ -342,7 +342,7 @@ function Toggle({
       </div>
       <span
         className={`relative h-5 w-9 shrink-0 rounded-full transition-colors ${
-          checked ? "bg-konoha-orange shadow-[0_0_12px_rgba(255,107,0,0.5)]" : "bg-konoha-forest/60"
+          checked ? "bg-konoha-orange shadow-[0_0_12px_rgba(255,23,68,0.5)]" : "bg-konoha-forest/60"
         }`}
       >
         <span

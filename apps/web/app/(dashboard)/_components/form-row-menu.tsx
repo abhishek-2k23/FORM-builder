@@ -11,7 +11,7 @@ import {
   Pencil,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
-import { useToast } from "@/components/konoha/toast";
+import { useToast } from "@/components/verse/toast";
 
 interface Props {
   formId: string;
@@ -59,14 +59,14 @@ export function FormRowMenu({
       await utils.forms.list.invalidate();
       toast.push({
         variant: "success",
-        title: "Scroll deployed",
-        message: "The link is now live across the village.",
+        title: "Form published",
+        message: "Your link is now live on the web.",
       });
     },
     onError: (err) => {
       toast.push({
         variant: "error",
-        title: "Cannot deploy",
+        title: "Cannot publish",
         message: err.message?.slice(0, 120) ?? "Add at least one field first.",
       });
     },
@@ -77,14 +77,14 @@ export function FormRowMenu({
       await utils.forms.list.invalidate();
       toast.push({
         variant: "success",
-        title: "Scroll sealed",
+        title: "Form closed",
         message: "Public link is no longer accepting responses.",
       });
     },
     onError: (err) => {
       toast.push({
         variant: "error",
-        title: "Could not seal scroll",
+        title: "Could not close form",
         message: err.message?.slice(0, 120) ?? "Try again.",
       });
     },
@@ -102,7 +102,7 @@ export function FormRowMenu({
         toast.push({
           variant: "success",
           title: "Link copied",
-          message: "Hand it to your courier.",
+          message: "Share it with your respondents.",
         }),
       )
       .catch(() =>
@@ -152,7 +152,7 @@ export function FormRowMenu({
             <>
               <MenuItem
                 icon={ExternalLink}
-                label="View live scroll"
+                label="View live form"
                 onClick={() => {
                   window.open(`/f/${formSlug}`, "_blank");
                   setOpen(false);
@@ -161,7 +161,7 @@ export function FormRowMenu({
               <MenuItem icon={Link2} label="Copy public link" onClick={copyLink} />
               <MenuItem
                 icon={Lock}
-                label="Seal scroll"
+                label="Close form"
                 onClick={() => {
                   unpublish.mutate({ formId });
                   setOpen(false);
@@ -172,7 +172,7 @@ export function FormRowMenu({
           ) : (
             <MenuItem
               icon={Send}
-              label="Deploy scroll"
+              label="Publish form"
               onClick={() => {
                 publish.mutate({ formId });
                 setOpen(false);

@@ -38,12 +38,12 @@ export function FormSettings({ form, onChange }: Props) {
           <ScrollText className="h-3.5 w-3.5" />
         </span>
         <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
-          Scroll Settings
+          Form Settings
         </span>
       </div>
 
       <label className="flex flex-col gap-2">
-        <span className={labelCls}>Scroll title</span>
+        <span className={labelCls}>Form title</span>
         <input
           className={inputCls}
           value={form.title}
@@ -56,7 +56,7 @@ export function FormSettings({ form, onChange }: Props) {
         <textarea
           className={textareaCls}
           value={form.description ?? ""}
-          placeholder="What does this scroll capture?"
+          placeholder="What does this form capture?"
           onChange={(e) => onChange({ description: e.target.value || null })}
         />
       </label>
@@ -66,14 +66,14 @@ export function FormSettings({ form, onChange }: Props) {
         <textarea
           className={textareaCls}
           value={form.successMessage ?? ""}
-          placeholder="Thank you, shinobi. Your scroll has been delivered."
+          placeholder="Thanks! Your response has been recorded."
           onChange={(e) => onChange({ successMessage: e.target.value || null })}
         />
       </label>
 
       <Toggle
-        label="Public scroll"
-        description="Public scrolls can appear in the Village Map directory"
+        label="Public form"
+        description="Public forms can appear in the Explore directory"
         checked={form.visibility === "public"}
         onChange={(v) =>
           onChange({ visibility: v ? "public" : "unlisted" })
@@ -102,8 +102,8 @@ export function FormSettings({ form, onChange }: Props) {
             active={!form.themeId}
             onClick={() => onChange({ themeId: null })}
             name="None"
-            description="Default Konoha"
-            swatches={["#FF6B00", "#00D4FF"]}
+            description="Default theme"
+            swatches={["#FF1744", "#00D4FF"]}
           />
           {themesQuery.isLoading ? (
             <div className="h-16 animate-pulse rounded-md bg-konoha-forest/20" />
@@ -164,7 +164,7 @@ function Toggle({
       </div>
       <span
         className={`relative h-5 w-9 shrink-0 rounded-full transition-colors ${
-          checked ? "bg-konoha-orange shadow-[0_0_12px_rgba(255,107,0,0.5)]" : "bg-konoha-forest/60"
+          checked ? "bg-konoha-orange shadow-[0_0_12px_rgba(255,23,68,0.5)]" : "bg-konoha-forest/60"
         }`}
       >
         <span
@@ -196,7 +196,7 @@ function ThemeChoice({
       onClick={onClick}
       className={`flex flex-col gap-1.5 rounded-md border p-3 text-left transition-all ${
         active
-          ? "border-konoha-orange/60 bg-konoha-orange/10 shadow-[0_0_16px_rgba(255,107,0,0.15)]"
+          ? "border-konoha-orange/60 bg-konoha-orange/10 shadow-[0_0_16px_rgba(255,23,68,0.15)]"
           : "border-konoha-forest/60 bg-konoha-ink/40 hover:border-konoha-forest"
       }`}
     >

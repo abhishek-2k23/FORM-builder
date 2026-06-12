@@ -70,7 +70,7 @@ export function AddFieldPopover({
         onClick={() => setOpen((s) => !s)}
         className={
           variant === "primary"
-            ? "btn-rasengan flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-konoha-orange/50 bg-konoha-orange/5 px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-konoha-orange hover:border-konoha-orange hover:bg-konoha-orange/10 disabled:opacity-50"
+            ? "btn-verse flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-konoha-orange/50 bg-konoha-orange/5 px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-konoha-orange hover:border-konoha-orange hover:bg-konoha-orange/10 disabled:opacity-50"
             : "flex h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:opacity-50"
         }
       >

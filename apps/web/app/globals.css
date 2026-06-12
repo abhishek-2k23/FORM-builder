@@ -280,30 +280,6 @@
   background: linear-gradient(90deg, transparent, rgba(217, 4, 41, 0.6), transparent);
 }
 
-/* Scroll card — backward compat */
-.scroll-card {
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
-  border: 1px solid rgba(40, 40, 40, 0.6);
-  border-radius: 12px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-}
-
-.scroll-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(217, 4, 41, 0.15), rgba(192, 192, 192, 0.08), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
 /* Web divider — glowing red strand */
 .web-divider {
   height: 2px;
@@ -320,22 +296,6 @@
   background-size: 200% 100%;
   animation: strandGlow 4s ease-in-out infinite;
   box-shadow: 0 0 10px rgba(217, 4, 41, 0.3);
-}
-
-.chakra-divider {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #8B0000,
-    #D90429,
-    #FF1744,
-    #D90429,
-    #8B0000,
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: strandGlow 4s ease-in-out infinite;
 }
 
 @keyframes strandGlow {
@@ -367,34 +327,6 @@
 }
 
 .btn-verse:hover {
-  box-shadow:
-    0 0 30px rgba(217, 4, 41, 0.5),
-    0 0 60px rgba(217, 4, 41, 0.2);
-}
-
-.btn-rasengan {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-rasengan::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -30%;
-  width: 30%;
-  height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-  transform: translateY(-50%) skewX(-20deg);
-  transition: left 0.5s ease;
-}
-
-.btn-rasengan:hover::before {
-  left: 130%;
-}
-
-.btn-rasengan:hover {
   box-shadow:
     0 0 30px rgba(217, 4, 41, 0.5),
     0 0 60px rgba(217, 4, 41, 0.2);
