@@ -248,15 +248,15 @@ function NotificationToggle({
         aria-checked={enabled}
         disabled={!hydrated}
         onClick={toggle}
-        className={`relative h-5 w-9 shrink-0 rounded-full transition-colors disabled:opacity-50 ${
+        className={`relative h-5 w-9 shrink-0 rounded-full border transition-colors disabled:opacity-50 ${
           enabled
-            ? "bg-konoha-orange shadow-[0_0_10px_rgba(255,23,68,0.4)]"
-            : "bg-konoha-forest"
+            ? "border-konoha-orange bg-konoha-orange shadow-[0_0_10px_rgba(255,23,68,0.4)]"
+            : "border-spider-silver/30 bg-white/10"
         }`}
       >
         <span
-          className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-transform ${
-            enabled ? "translate-x-4" : "translate-x-0.5"
+          className={`absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white transition-transform ${
+            enabled ? "translate-x-4" : "translate-x-0"
           }`}
         />
       </button>

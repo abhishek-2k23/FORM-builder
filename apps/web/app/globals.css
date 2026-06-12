@@ -26,7 +26,7 @@
     --secondary-foreground: 0 0% 96%;
 
     --muted: 0 0% 11%;
-    --muted-foreground: 0 0% 68%;
+    --muted-foreground: 210 12% 82%;
 
     --accent: 349 97% 43%;
     --accent-foreground: 0 0% 100%;
@@ -51,21 +51,23 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    font-size: 17px;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
+    font-family: "Cinzel", "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
     font-feature-settings: "kern", "liga", "calt";
-    font-weight: 500;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
     background: #050505;
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Bebas Neue", "Anton", system-ui, sans-serif;
+    font-family: "Black Ops One", "Bebas Neue", "Anton", system-ui, sans-serif;
     letter-spacing: 0.04em;
+    font-weight: 700;
   }
 
   ::selection {

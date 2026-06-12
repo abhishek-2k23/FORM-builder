@@ -46,7 +46,7 @@ export default function RootLayout({
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Black+Ops+One&family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
           />
           <link
             rel="stylesheet"

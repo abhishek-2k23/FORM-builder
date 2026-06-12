@@ -82,6 +82,29 @@ const themes = [
       mono: "ui-monospace",
     },
   },
+  {
+    name: "Spider Web",
+    slug: "spider-web",
+    description:
+      "The WebForm Verse house theme. Deep black, spider red, and chrome silver — a premium cinematic web for your forms.",
+    category: "spider-tech",
+    isActive: true,
+    colors: {
+      primary: "#D90429",
+      background: "#050505",
+      surface: "#111111",
+      text: "#F5F5F5",
+      textMuted: "#C0C0C0",
+      accent: "#FF1744",
+      border: "#1A1A1A",
+      error: "#8B0000",
+    },
+    fonts: {
+      heading: "Black Ops One",
+      body: "Cinzel",
+      mono: "JetBrains Mono",
+    },
+  },
 ];
 
 async function main() {

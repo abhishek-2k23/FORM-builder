@@ -83,9 +83,11 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        heading: ["Bebas Neue", "Anton", "system-ui", "sans-serif"],
-        sans: ["Satoshi", "Inter", "system-ui", "sans-serif"],
+        heading: ["Black Ops One", "Bebas Neue", "Anton", "system-ui", "sans-serif"],
+        sans: ["Cinzel", "Satoshi", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
+        "black-ops": ["Black Ops One", "Bebas Neue", "system-ui", "sans-serif"],
+        cinzel: ["Cinzel", "Georgia", "serif"],
       },
       keyframes: {
         "web-pulse": {
