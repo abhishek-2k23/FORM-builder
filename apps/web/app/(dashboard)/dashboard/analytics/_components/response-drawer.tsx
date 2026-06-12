@@ -49,7 +49,7 @@ function renderValue(value: unknown): React.ReactNode {
         {value.map((v, i) => (
           <span
             key={i}
-            className="rounded-md border border-konoha-forest/60 bg-konoha-ink/60 px-2 py-0.5 text-[11px]"
+            className="rounded-md border border-konoha-forest/60 bg-konoha-ink/60 px-2 py-0.5 text-xs"
           >
             {String(v)}
           </span>
@@ -140,7 +140,7 @@ export function ResponseDrawer({ open, onClose, formId, responseId, fields }: Pr
         {/* Header */}
         <div className="flex items-start justify-between border-b border-konoha-forest/40 px-6 py-5">
           <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
+            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
               Submission
             </p>
             <h2 className="mt-1 font-heading text-lg font-bold tracking-tight">
@@ -196,7 +196,7 @@ export function ResponseDrawer({ open, onClose, formId, responseId, fields }: Pr
                       key={field.id}
                       className="rounded-md border border-konoha-forest/40 bg-konoha-ink/60 p-4"
                     >
-                      <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+                      <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
                         {field.label}
                       </p>
                       <div className="text-sm leading-relaxed text-foreground">
@@ -253,7 +253,7 @@ function Meta({
 }) {
   return (
     <div className="rounded-md border border-konoha-forest/40 bg-konoha-ink/40 px-3 py-2.5">
-      <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
         <Icon className="h-3 w-3" />
         {label}
       </div>

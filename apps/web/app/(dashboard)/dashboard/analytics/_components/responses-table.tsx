@@ -76,10 +76,10 @@ export function ResponsesTable({ formId, fields }: Props) {
     <>
       <div className="glass-card overflow-hidden">
         <div className="border-b border-konoha-forest/40 px-4 py-3">
-          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
             Recent Submissions
           </p>
-          <p className="mt-1 text-[11px] text-muted-foreground">
+          <p className="mt-1 text-xs text-muted-foreground">
             {total} total · click any row to inspect
           </p>
         </div>
@@ -97,7 +97,7 @@ export function ResponsesTable({ formId, fields }: Props) {
           <div className="flex flex-col items-center gap-2 px-6 py-16 text-center">
             <Inbox className="h-6 w-6 text-muted-foreground" />
             <p className="text-sm text-foreground">No responses yet.</p>
-            <p className="max-w-sm text-[11px] leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-xs leading-relaxed text-muted-foreground">
               Once visitors submit your form, their answers will appear here.
             </p>
           </div>
@@ -107,13 +107,13 @@ export function ResponsesTable({ formId, fields }: Props) {
               <table className="min-w-full text-sm">
                 <thead className="bg-konoha-ink/40">
                   <tr className="text-left">
-                    <th className="px-4 py-2.5 text-[9px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+                    <th className="px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
                       Submitted
                     </th>
                     {previewFields.map((f) => (
                       <th
                         key={f.id}
-                        className="px-4 py-2.5 text-[9px] font-medium uppercase tracking-[0.25em] text-muted-foreground"
+                        className="px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground"
                       >
                         {f.label}
                       </th>
@@ -133,7 +133,7 @@ export function ResponsesTable({ formId, fields }: Props) {
                           {formatRelative(r.submittedAt)}
                         </p>
                         {r.respondentEmail && (
-                          <p className="mt-0.5 truncate text-[10px] text-muted-foreground">
+                          <p className="mt-0.5 truncate text-[11px] text-muted-foreground">
                             {r.respondentEmail}
                           </p>
                         )}
@@ -162,7 +162,7 @@ export function ResponsesTable({ formId, fields }: Props) {
 
             {totalPages > 1 && (
               <div className="flex items-center justify-between gap-3 border-t border-konoha-forest/40 px-4 py-3">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                   Page {page} of {totalPages}
                 </p>
                 <div className="flex items-center gap-1">

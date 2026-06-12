@@ -88,7 +88,7 @@ export function KpiRow({ summary, loading }: { summary?: Summary; loading?: bool
             className="glass-card flex flex-col gap-3 p-4"
           >
             <div className="flex items-start justify-between gap-2">
-              <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+              <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
                 {item.label}
               </p>
               <div
@@ -106,7 +106,7 @@ export function KpiRow({ summary, loading }: { summary?: Summary; loading?: bool
               </p>
             )}
 
-            <p className="text-[10px] leading-snug text-muted-foreground">
+            <p className="text-[11px] leading-snug text-muted-foreground">
               {item.hint}
             </p>
           </div>

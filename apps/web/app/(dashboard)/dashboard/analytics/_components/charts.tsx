@@ -207,10 +207,10 @@ export function Funnel({
           <div key={s.label}>
             <div className="mb-1.5 flex items-baseline justify-between">
               <div>
-                <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+                <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
                   {s.label}
                 </p>
-                <p className="text-[10px] text-muted-foreground/60">{s.sublabel}</p>
+                <p className="text-[11px] text-muted-foreground/60">{s.sublabel}</p>
               </div>
               <div className="text-right">
                 <p
@@ -220,7 +220,7 @@ export function Funnel({
                   {s.value.toLocaleString()}
                 </p>
                 {s.pct !== undefined && (
-                  <p className="mt-0.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                  <p className="mt-0.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                     {s.pct}% of views
                   </p>
                 )}
@@ -256,7 +256,7 @@ export function BarList({
 }) {
   if (items.length === 0) {
     return (
-      <p className="text-center text-[11px] uppercase tracking-[0.25em] text-muted-foreground/70 py-6">
+      <p className="text-center text-xs uppercase tracking-[0.25em] text-muted-foreground/70 py-6">
         {emptyLabel}
       </p>
     );
@@ -278,7 +278,7 @@ export function BarList({
               <span className="truncate text-xs text-foreground">
                 {item.label || "—"}
               </span>
-              <span className="shrink-0 font-mono text-[11px] tabular-nums text-konoha-orange">
+              <span className="shrink-0 font-mono text-xs tabular-nums text-konoha-orange">
                 {item.count.toLocaleString()}
               </span>
             </div>

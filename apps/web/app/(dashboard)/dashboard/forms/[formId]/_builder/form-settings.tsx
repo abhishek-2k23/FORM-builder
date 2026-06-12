@@ -17,7 +17,7 @@ const textareaCls =
   "w-full min-h-[88px] rounded-md border border-konoha-forest/60 bg-konoha-ink/60 px-3 py-2 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground/60 focus:border-konoha-orange focus:outline-none focus:ring-2 focus:ring-konoha-orange/20";
 
 const labelCls =
-  "block text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground";
+  "block text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground";
 
 interface AvailableTheme {
   id: string;
@@ -37,7 +37,7 @@ export function FormSettings({ form, onChange }: Props) {
         <span className="flex h-7 w-7 items-center justify-center rounded-md border border-konoha-forest/60 bg-konoha-ink text-konoha-orange">
           <ScrollText className="h-3.5 w-3.5" />
         </span>
-        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
           Form Settings
         </span>
       </div>
@@ -91,7 +91,7 @@ export function FormSettings({ form, onChange }: Props) {
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <span className={labelCls}>Theme</span>
-          <span className="flex items-center gap-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          <span className="flex items-center gap-1 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <Palette className="h-3 w-3" />
             {themes.length} available
           </span>
@@ -123,7 +123,7 @@ export function FormSettings({ form, onChange }: Props) {
       </div>
 
       <div className="rounded-md border border-konoha-forest/40 bg-konoha-ink/30 p-3">
-        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
           Public link
         </p>
         <p className="mt-1.5 truncate font-mono text-xs text-konoha-orange">
@@ -159,7 +159,7 @@ function Toggle({
       <div className="min-w-0">
         <p className="text-sm font-medium text-foreground">{label}</p>
         {description && (
-          <p className="mt-0.5 text-[11px] text-muted-foreground">{description}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
         )}
       </div>
       <span
@@ -212,7 +212,7 @@ function ThemeChoice({
           />
         ))}
         {active && (
-          <span className="ml-auto text-[8px] font-medium uppercase tracking-[0.2em] text-konoha-orange">
+          <span className="ml-auto text-[10px] font-medium uppercase tracking-[0.2em] text-konoha-orange">
             Active
           </span>
         )}
@@ -224,7 +224,7 @@ function ThemeChoice({
       >
         {name}
       </p>
-      <p className="line-clamp-1 text-[10px] leading-snug text-muted-foreground">
+      <p className="line-clamp-1 text-[11px] leading-snug text-muted-foreground">
         {description}
       </p>
     </button>

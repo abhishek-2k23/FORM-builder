@@ -164,7 +164,7 @@ export function FormsList({ full = false }: FormsListProps) {
         <p className="text-sm text-verse-red">
           Couldn&apos;t connect to the network.
         </p>
-        <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+        <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
           {(error?.message ?? "Unknown error").slice(0, 80)}
         </p>
       </div>
@@ -195,7 +195,7 @@ export function FormsList({ full = false }: FormsListProps) {
           {(data as FormRow[]).length > 5 && (
             <Link
               href="/dashboard/forms"
-              className="flex items-center justify-center gap-2 border-t border-[#24243A]/60 py-3 text-[11px] uppercase tracking-[0.15em] text-muted-foreground hover:bg-[#24243A]/20 hover:text-verse-red transition-colors"
+              className="flex items-center justify-center gap-2 border-t border-[#24243A]/60 py-3 text-xs uppercase tracking-[0.15em] text-muted-foreground hover:bg-[#24243A]/20 hover:text-verse-red transition-colors"
             >
               View all {(data as FormRow[]).length} nodes
               <ArrowRight className="h-3.5 w-3.5" />
@@ -243,7 +243,7 @@ export function FormsList({ full = false }: FormsListProps) {
                 key={t.id}
                 type="button"
                 onClick={() => setTab(t.id)}
-                className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-[11px] uppercase tracking-[0.15em] transition-all ${
+                className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-xs uppercase tracking-[0.15em] transition-all ${
                   active
                     ? "bg-verse-red/10 text-verse-red"
                     : "text-muted-foreground hover:text-foreground"
@@ -251,7 +251,7 @@ export function FormsList({ full = false }: FormsListProps) {
               >
                 {t.label}
                 <span
-                  className={`rounded-full px-1.5 text-[9px] tabular-nums ${
+                  className={`rounded-full px-1.5 text-[10px] tabular-nums ${
                     active
                       ? "bg-verse-red/20 text-verse-red"
                       : "bg-[#24243A] text-muted-foreground"
@@ -278,7 +278,7 @@ export function FormsList({ full = false }: FormsListProps) {
         <button
           type="button"
           onClick={() => setCreateOpen(true)}
-          className="btn-verse flex h-9 items-center gap-2 rounded-lg bg-gradient-to-r from-verse-red to-verse-redHover px-4 font-heading text-[11px] uppercase tracking-[0.12em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] hover:shadow-[0_0_30px_rgba(255,23,68,0.4)]"
+          className="btn-verse flex h-9 items-center gap-2 rounded-lg bg-gradient-to-r from-verse-red to-verse-redHover px-4 font-heading text-xs uppercase tracking-[0.12em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] hover:shadow-[0_0_30px_rgba(255,23,68,0.4)]"
         >
           <Plus className="h-3.5 w-3.5" />
           New Form
@@ -353,7 +353,7 @@ function FormRowItem({
             {form.title}
           </h3>
           <span
-            className={`shrink-0 rounded-full border px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.15em] ${status.cls}`}
+            className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.15em] ${status.cls}`}
           >
             {status.label}
           </span>
@@ -373,7 +373,7 @@ function FormRowItem({
       </div>
 
       <div className="hidden text-right md:block">
-        <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+        <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
           Updated
         </p>
         <p className="mt-0.5 text-xs text-foreground">
@@ -396,7 +396,7 @@ function FormRowItem({
           className="flex min-w-0 flex-1 items-center gap-4 text-left"
         >
           {Inner}
-          <span className="ml-2 hidden shrink-0 rounded-lg border border-verse-red/30 bg-verse-red/10 px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-verse-red md:inline">
+          <span className="ml-2 hidden shrink-0 rounded-lg border border-verse-red/30 bg-verse-red/10 px-2 py-1 text-[11px] uppercase tracking-[0.15em] text-verse-red md:inline">
             Apply theme
           </span>
         </button>
@@ -464,7 +464,7 @@ function EmptyState({ onCreate }: { onCreate: () => void }) {
       <button
         type="button"
         onClick={onCreate}
-        className="btn-verse mt-2 inline-flex h-10 items-center gap-2 rounded-lg bg-gradient-to-r from-verse-red to-verse-redHover px-5 font-heading text-[11px] uppercase tracking-[0.12em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] hover:shadow-[0_0_30px_rgba(255,23,68,0.4)]"
+        className="btn-verse mt-2 inline-flex h-10 items-center gap-2 rounded-lg bg-gradient-to-r from-verse-red to-verse-redHover px-5 font-heading text-xs uppercase tracking-[0.12em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] hover:shadow-[0_0_30px_rgba(255,23,68,0.4)]"
       >
         Create first node
         <ArrowRight className="h-3.5 w-3.5" />
@@ -483,7 +483,7 @@ function NoMatches({ onClear }: { onClear: () => void }) {
       <button
         type="button"
         onClick={onClear}
-        className="text-[11px] uppercase tracking-[0.15em] text-verse-red hover:text-verse-redHover transition-colors"
+        className="text-xs uppercase tracking-[0.15em] text-verse-red hover:text-verse-redHover transition-colors"
       >
         Clear search
       </button>
@@ -510,7 +510,7 @@ function ThemeApplyBanner({
 
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-verse-red">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-verse-red">
             Apply theme
           </p>
           {themeColors && (
@@ -543,7 +543,7 @@ function ThemeApplyBanner({
         type="button"
         onClick={onCancel}
         disabled={loading}
-        className="flex h-8 items-center gap-1.5 rounded-lg border border-[#24243A] px-3 text-[10px] uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:border-verse-red hover:text-verse-red disabled:opacity-40"
+        className="flex h-8 items-center gap-1.5 rounded-lg border border-[#24243A] px-3 text-[11px] uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:border-verse-red hover:text-verse-red disabled:opacity-40"
       >
         <X className="h-3 w-3" />
         Cancel

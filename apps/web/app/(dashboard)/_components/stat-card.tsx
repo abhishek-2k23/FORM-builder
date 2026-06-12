@@ -49,7 +49,7 @@ export function StatCard({
 
   return (
     <div
-      className={`glass-card web-corners group relative flex flex-col gap-3 overflow-hidden p-5 transition-all ${a.border} ${a.glow}`}
+      className={`glass-card web-corners group relative flex flex-col gap-4 overflow-hidden p-6 transition-all ${a.border} ${a.glow}`}
     >
       {/* Corner web decoration — brightens on hover */}
       <div
@@ -60,7 +60,7 @@ export function StatCard({
       </div>
 
       <div className="relative flex items-start justify-between gap-3">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-spider-silver/50">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-spider-silver/75">
           {label}
         </p>
         <div
@@ -83,7 +83,7 @@ export function StatCard({
       </div>
 
       {hint && !loading && (
-        <p className="relative text-[11px] leading-relaxed text-spider-silver/40">
+        <p className="relative text-xs leading-relaxed text-spider-silver/65">
           {hint}
         </p>
       )}

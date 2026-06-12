@@ -48,11 +48,11 @@ export function ExploreCard({ form, href }: Props) {
     <article className="glass-card group flex h-full flex-col gap-4 p-5 transition-all hover:-translate-y-0.5 hover:border-konoha-orange/60 hover:shadow-[0_0_24px_rgba(255,23,68,0.12)]">
       {/* Top: status + slug */}
       <div className="flex items-center justify-between">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-konoha-orange/40 bg-konoha-orange/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.25em] text-konoha-orange">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-konoha-orange/40 bg-konoha-orange/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.25em] text-konoha-orange">
           <span className="h-1 w-1 rounded-full bg-konoha-orange shadow-[0_0_4px_#FF1744]" />
           Live
         </span>
-        <span className="font-mono text-[9px] text-muted-foreground/60">
+        <span className="font-mono text-[10px] text-muted-foreground/60">
           /{form.slug}
         </span>
       </div>
@@ -70,8 +70,8 @@ export function ExploreCard({ form, href }: Props) {
       </div>
 
       {/* Owner + date */}
-      <div className="flex items-center gap-2 border-t border-konoha-forest/40 pt-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-konoha-orange/40 bg-konoha-ink font-mono text-[9px] font-bold text-konoha-orange">
+      <div className="flex items-center gap-2 border-t border-konoha-forest/40 pt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-konoha-orange/40 bg-konoha-ink font-mono text-[10px] font-bold text-konoha-orange">
           {ownerInitial(form.owner)}
         </span>
         <span className="truncate text-foreground/70 normal-case">
@@ -90,7 +90,7 @@ export function ExploreCard({ form, href }: Props) {
           <span className="font-mono tabular-nums text-foreground">
             {form.responseCount}
           </span>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
             responses
           </span>
         </div>
@@ -98,7 +98,7 @@ export function ExploreCard({ form, href }: Props) {
           href={target}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-8 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-konoha-orange hover:text-konoha-orange"
+          className="flex h-8 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-konoha-orange hover:text-konoha-orange"
         >
           Open form
           <ArrowUpRight className="h-3 w-3" />

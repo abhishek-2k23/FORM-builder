@@ -9,7 +9,7 @@ export default function FormsPage() {
     <div>
       {/* Hero band */}
       <section className="mb-8">
-        <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
+        <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
           Forms
         </p>
         <h1 className="font-heading text-3xl font-black tracking-tight md:text-4xl">

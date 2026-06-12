@@ -45,7 +45,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
           />
         ))}
         <span
-          className="ml-1 truncate text-[10px] uppercase tracking-[0.2em]"
+          className="ml-1 truncate text-[11px] uppercase tracking-[0.2em]"
           style={{ color: colors.textMuted, fontFamily: fonts?.body }}
         >
           Aa Bb Cc
@@ -75,7 +75,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
           }}
         />
         <span
-          className="text-[8px] font-medium uppercase tracking-[0.3em]"
+          className="text-[10px] font-medium uppercase tracking-[0.3em]"
           style={{ color: colors.textMuted, fontFamily: fonts?.body }}
         >
           Live preview
@@ -92,7 +92,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
       >
         {/* Heading */}
         <div
-          className="text-[8px] uppercase tracking-[0.3em] mb-1"
+          className="text-[10px] uppercase tracking-[0.3em] mb-1"
           style={{ color: colors.primary }}
         >
           Form
@@ -124,7 +124,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
             Your name
           </div>
           <div
-            className="h-7 rounded px-2 text-[10px]"
+            className="h-7 rounded px-2 text-[11px]"
             style={{
               background: colors.background,
               border: `1px solid ${colors.border}`,
@@ -160,7 +160,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
 
         {/* Faux button */}
         <div
-          className="flex h-7 items-center justify-center rounded px-3 text-[8px] font-bold uppercase tracking-[0.18em]"
+          className="flex h-7 items-center justify-center rounded px-3 text-[10px] font-bold uppercase tracking-[0.18em]"
           style={{
             background: `linear-gradient(135deg, ${colors.primary}, ${colors.error})`,
             color: "#fff",
@@ -195,7 +195,7 @@ export function ThemePreview({ colors, fonts, compact }: Props) {
           />
         ))}
         <span
-          className="ml-auto font-mono text-[8px]"
+          className="ml-auto font-mono text-[10px]"
           style={{ color: colors.textMuted }}
         >
           {colors.primary}

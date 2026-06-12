@@ -18,7 +18,7 @@ export default function ExplorePage() {
         </div>
 
         <div className="relative max-w-2xl">
-          <p className="mb-2 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
+          <p className="mb-2 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
             <Compass className="h-3 w-3" />
             Explore the Verse
           </p>
@@ -39,14 +39,14 @@ export default function ExplorePage() {
               href="/explore"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-9 items-center gap-2 rounded-md border border-konoha-orange/40 bg-konoha-orange/5 px-3 text-[11px] uppercase tracking-[0.18em] text-konoha-orange hover:bg-konoha-orange/10"
+              className="flex h-9 items-center gap-2 rounded-md border border-konoha-orange/40 bg-konoha-orange/5 px-3 text-xs uppercase tracking-[0.18em] text-konoha-orange hover:bg-konoha-orange/10"
             >
               <ExternalLink className="h-3.5 w-3.5" />
               Open public explore
             </Link>
             <Link
               href="/dashboard/forms?new=1"
-              className="btn-verse flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] hover:shadow-[0_0_30px_rgba(255,23,68,0.5)]"
+              className="btn-verse flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-xs uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] hover:shadow-[0_0_30px_rgba(255,23,68,0.5)]"
             >
               Create your own form
               <ArrowRight className="h-3.5 w-3.5" />

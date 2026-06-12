@@ -16,7 +16,7 @@ const textareaCls =
   "w-full min-h-[72px] rounded-md border border-konoha-forest/60 bg-konoha-ink/60 px-3 py-2 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground/60 focus:border-konoha-orange focus:outline-none focus:ring-2 focus:ring-konoha-orange/20";
 
 const labelCls =
-  "block text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground";
+  "block text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground";
 
 const TYPES_WITH_PLACEHOLDER: FieldType[] = [
   "short_text",
@@ -73,7 +73,7 @@ export function FieldInspector({ field, onChange }: Props) {
         <span className="flex h-7 w-7 items-center justify-center rounded-md border border-konoha-forest/60 bg-konoha-ink text-konoha-orange">
           <Icon className="h-3.5 w-3.5" />
         </span>
-        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
           {def.label}
         </span>
       </div>
@@ -152,7 +152,7 @@ export function FieldInspector({ field, onChange }: Props) {
           <button
             type="button"
             onClick={addOption}
-            className="flex h-9 items-center justify-center gap-2 rounded-md border border-dashed border-konoha-forest/60 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
+            className="flex h-9 items-center justify-center gap-2 rounded-md border border-dashed border-konoha-forest/60 text-xs uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
           >
             <Plus className="h-3.5 w-3.5" />
             Add option
@@ -309,7 +309,7 @@ function ValidationSection({
 }) {
   return (
     <div className="flex flex-col gap-3 rounded-md border border-konoha-forest/40 bg-konoha-ink/30 p-3">
-      <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange/80">
+      <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-konoha-orange/80">
         {title}
       </span>
       {children}
@@ -337,7 +337,7 @@ function Toggle({
       <div className="min-w-0">
         <p className="text-sm font-medium text-foreground">{label}</p>
         {description && (
-          <p className="mt-0.5 text-[11px] text-muted-foreground">{description}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
         )}
       </div>
       <span

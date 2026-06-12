@@ -52,7 +52,7 @@ export default function ThemeGalleryPage() {
         </div>
 
         <div className="relative max-w-2xl">
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
             Themes
           </p>
           <h1 className="font-heading text-3xl font-black leading-tight md:text-5xl">
@@ -84,7 +84,7 @@ export default function ThemeGalleryPage() {
         <>
           <div className="mb-4 flex items-center gap-2">
             <Sparkles className="h-3.5 w-3.5 text-konoha-orange" />
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+            <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
               {(data as DBTheme[]).length} theme
               {(data as DBTheme[]).length === 1 ? "" : "s"} available
             </p>
@@ -108,17 +108,17 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
       <div className="flex items-center justify-between gap-2 border-b border-konoha-forest/40 px-4 py-2.5">
         <div className="flex items-center gap-2">
           {theme.isDefault && (
-            <span className="rounded-full border border-konoha-gold/40 bg-konoha-gold/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.25em] text-konoha-gold">
+            <span className="rounded-full border border-konoha-gold/40 bg-konoha-gold/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.25em] text-konoha-gold">
               Default
             </span>
           )}
           {theme.category && (
-            <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
               {theme.category}
             </span>
           )}
         </div>
-        <span className="font-mono text-[9px] text-muted-foreground/60">
+        <span className="font-mono text-[10px] text-muted-foreground/60">
           /{theme.slug}
         </span>
       </div>
@@ -141,7 +141,7 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
 
         {/* Font specimen */}
         <div className="mt-auto rounded-md border border-konoha-forest/40 bg-konoha-ink/40 p-3">
-          <div className="flex items-baseline justify-between gap-2 text-[9px] uppercase tracking-[0.25em] text-muted-foreground">
+          <div className="flex items-baseline justify-between gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             <span>Heading</span>
             <span className="font-mono text-muted-foreground/60">
               {theme.fonts.heading}
@@ -154,7 +154,7 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
             Every form is a node in the web.
           </p>
 
-          <div className="mt-3 flex items-baseline justify-between gap-2 text-[9px] uppercase tracking-[0.25em] text-muted-foreground">
+          <div className="mt-3 flex items-baseline justify-between gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             <span>Body</span>
             <span className="font-mono text-muted-foreground/60">
               {theme.fonts.body}
@@ -171,7 +171,7 @@ function ThemeCard({ theme }: { theme: DBTheme }) {
         {/* Apply CTA */}
         <Link
           href={`/dashboard/forms?theme=${theme.id}`}
-          className="mt-2 flex h-10 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] transition-shadow hover:shadow-[0_0_30px_rgba(255,23,68,0.5)]"
+          className="mt-2 flex h-10 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-5 font-heading text-xs uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.25)] transition-shadow hover:shadow-[0_0_30px_rgba(255,23,68,0.5)]"
         >
           <Check className="h-3.5 w-3.5" />
           Apply to a form
@@ -203,7 +203,7 @@ function EmptyState() {
         pnpm --filter @repo/database db:seed
       </div>
 
-      <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
+      <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground/70">
         Run that once, then refresh this page.
       </p>
     </div>
@@ -216,7 +216,7 @@ function ErrorState({ message }: { message: string }) {
       <p className="text-sm text-konoha-akatsuki">
         Couldn&apos;t reach the theme gallery.
       </p>
-      <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
         {message.slice(0, 100)}
       </p>
     </div>

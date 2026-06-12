@@ -79,7 +79,7 @@ export function FieldCard({
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-konoha-forest/60 bg-konoha-ink text-konoha-orange/80">
                 <Icon className="h-3 w-3" />
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+              <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
                 {def.label}
               </span>
               {field.required && (

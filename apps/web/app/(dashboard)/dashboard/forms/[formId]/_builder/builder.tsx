@@ -401,7 +401,7 @@ export function Builder({ formId }: Props) {
           </h1>
           <StatusBadge status={form.status} />
           {savingForm && (
-            <span className="hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:inline-flex">
+            <span className="hidden items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:inline-flex">
               <Loader2 className="h-3 w-3 animate-spin" />
               Saving
             </span>
@@ -413,7 +413,7 @@ export function Builder({ formId }: Props) {
           <button
             type="button"
             onClick={() => setPreviewMode(false)}
-            className={`flex items-center gap-1.5 rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] transition-colors ${
+            className={`flex items-center gap-1.5 rounded px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] transition-colors ${
               !previewMode ? "bg-konoha-orange/15 text-konoha-orange" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -423,7 +423,7 @@ export function Builder({ formId }: Props) {
           <button
             type="button"
             onClick={() => setPreviewMode(true)}
-            className={`flex items-center gap-1.5 rounded px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] transition-colors ${
+            className={`flex items-center gap-1.5 rounded px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] transition-colors ${
               previewMode ? "bg-konoha-orange/15 text-konoha-orange" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -455,7 +455,7 @@ export function Builder({ formId }: Props) {
                     }),
                   );
               }}
-              className="hidden h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange md:flex"
+              className="hidden h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-xs uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange md:flex"
             >
               <Link2 className="h-3.5 w-3.5" />
               Copy link
@@ -464,7 +464,7 @@ export function Builder({ formId }: Props) {
               href={`/f/${form.slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange md:flex"
+              className="hidden h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-xs uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange md:flex"
             >
               <ExternalLink className="h-3.5 w-3.5" />
               Open
@@ -473,7 +473,7 @@ export function Builder({ formId }: Props) {
               type="button"
               disabled={unpublishMutation.isPending}
               onClick={() => unpublishMutation.mutate({ formId })}
-              className="flex h-9 items-center gap-2 rounded-md border border-konoha-akatsuki/40 bg-konoha-akatsuki/10 px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-konoha-akatsuki hover:bg-konoha-akatsuki/20 disabled:opacity-50"
+              className="flex h-9 items-center gap-2 rounded-md border border-konoha-akatsuki/40 bg-konoha-akatsuki/10 px-4 font-heading text-xs uppercase tracking-[0.18em] text-konoha-akatsuki hover:bg-konoha-akatsuki/20 disabled:opacity-50"
             >
               <Lock className="h-3.5 w-3.5" />
               Close
@@ -484,7 +484,7 @@ export function Builder({ formId }: Props) {
             type="button"
             disabled={publishMutation.isPending || form.fields.length === 0}
             onClick={() => publishMutation.mutate({ formId })}
-            className="btn-verse flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] hover:shadow-[0_0_30px_rgba(255,23,68,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
+            className="btn-verse flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-xs uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,23,68,0.3)] hover:shadow-[0_0_30px_rgba(255,23,68,0.5)] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
             title={form.fields.length === 0 ? "Add at least one field first" : isSealed ? "Re-publish this form" : "Publish form"}
           >
             <Send className="h-3.5 w-3.5" />
@@ -557,7 +557,7 @@ export function Builder({ formId }: Props) {
               ) : rightPane === "field" ? (
                 <div className="flex flex-col items-center justify-center gap-3 px-6 py-12 text-center">
                   <p className="text-sm text-foreground">No field selected.</p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     Click a field on the canvas to edit it
                   </p>
                 </div>
@@ -590,7 +590,7 @@ function TabBtn({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`flex flex-1 items-center justify-center gap-1.5 px-4 py-3 text-[10px] uppercase tracking-[0.25em] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+      className={`flex flex-1 items-center justify-center gap-1.5 px-4 py-3 text-[11px] uppercase tracking-[0.25em] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
         active
           ? "border-b-2 border-konoha-orange text-konoha-orange"
           : "border-b-2 border-transparent text-muted-foreground hover:text-foreground"
@@ -611,7 +611,7 @@ function StatusBadge({ status }: { status: BuilderForm["status"] }) {
   const s = map[status];
   return (
     <span
-      className={`shrink-0 rounded-full px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] ${s.cls}`}
+      className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.2em] ${s.cls}`}
     >
       {s.label}
     </span>
@@ -666,7 +666,7 @@ function EditView({
             : "border-konoha-forest/40 hover:border-konoha-orange/40"
         }`}
       >
-        <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
+        <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
           Form Header
         </p>
         <h2 className="font-heading text-2xl font-black text-foreground">
@@ -725,7 +725,7 @@ function PreviewView({ form }: { form: BuilderForm }) {
   return (
     <div className="mx-auto max-w-2xl">
       <div className="glass-card p-8">
-        <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
+        <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.3em] text-konoha-orange">
           Live Preview · {getFieldDef("short_text").label.length > 0 && form.fields.length} field{form.fields.length === 1 ? "" : "s"}
         </div>
         <h1 className="font-heading text-3xl font-black tracking-tight">
@@ -747,7 +747,7 @@ function PreviewView({ form }: { form: BuilderForm }) {
           ) : (
             form.fields.map((field) => (
               <div key={field.id}>
-                <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                <label className="mb-2 block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
                   {field.label}
                   {field.required && <span className="ml-1 text-konoha-orange">✦</span>}
                 </label>

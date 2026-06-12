@@ -26,7 +26,7 @@
     --secondary-foreground: 0 0% 96%;
 
     --muted: 0 0% 11%;
-    --muted-foreground: 0 0% 55%;
+    --muted-foreground: 0 0% 68%;
 
     --accent: 349 97% 43%;
     --accent-foreground: 0 0% 100%;
@@ -34,8 +34,8 @@
     --destructive: 0 100% 27%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
     --ring: 349 97% 43%;
 
     --radius: 0.5rem;
@@ -57,6 +57,7 @@
     @apply bg-background text-foreground;
     font-family: "Satoshi", "Inter", system-ui, -apple-system, sans-serif;
     font-feature-settings: "kern", "liga", "calt";
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     background: #050505;
     background-attachment: fixed;

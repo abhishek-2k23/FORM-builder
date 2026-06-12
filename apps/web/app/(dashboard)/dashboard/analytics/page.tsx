@@ -35,7 +35,7 @@ export default function AnalyticsIndexPage() {
         </div>
 
         <div className="relative max-w-2xl">
-          <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.4em] text-konoha-orange">
             Insight
           </p>
           <h1 className="font-heading text-3xl font-black leading-tight md:text-5xl">
@@ -94,13 +94,13 @@ export default function AnalyticsIndexPage() {
             <p className="text-sm text-foreground">
               You haven&apos;t built any forms yet.
             </p>
-            <p className="max-w-sm text-[11px] leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-xs leading-relaxed text-muted-foreground">
               Create a form first, publish it, then return here to watch the
               signal flow.
             </p>
             <Link
               href="/dashboard/forms?new=1"
-              className="btn-verse mt-2 inline-flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white"
+              className="btn-verse mt-2 inline-flex h-9 items-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-xs uppercase tracking-[0.18em] text-white"
             >
               Create your first form
               <ArrowRight className="h-3.5 w-3.5" />
@@ -121,7 +121,7 @@ export default function AnalyticsIndexPage() {
                   <h3 className="truncate font-heading font-bold tracking-wide text-foreground group-hover:text-konoha-orange">
                     {form.title}
                   </h3>
-                  <p className="mt-1 flex items-center gap-3 text-[11px] text-muted-foreground">
+                  <p className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Inbox className="h-3 w-3" />
                       <span className="tabular-nums text-foreground">
@@ -130,7 +130,7 @@ export default function AnalyticsIndexPage() {
                       responses
                     </span>
                     <span
-                      className={`rounded-full border px-2 py-0.5 text-[9px] uppercase tracking-[0.2em] ${
+                      className={`rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] ${
                         form.status === "published"
                           ? "border-konoha-orange/40 text-konoha-orange"
                           : "border-konoha-forest text-muted-foreground"
@@ -167,7 +167,7 @@ function RollupCard({
         <Icon className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
+        <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
           {label}
         </p>
         {loading ? (

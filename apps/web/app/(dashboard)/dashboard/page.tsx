@@ -41,7 +41,7 @@ export default function DashboardHomePage() {
   return (
     <div className="relative">
       {/* Hero band */}
-      <section className="relative mb-10 overflow-hidden rounded-xl border border-[#1A1A1A] bg-spider-dark/80 p-6 md:p-10">
+      <section className="relative mb-12 overflow-hidden rounded-xl border border-[#1A1A1A] bg-spider-dark/80 p-6 md:p-12">
         {/* Background radial web */}
         <div
           aria-hidden
@@ -56,7 +56,7 @@ export default function DashboardHomePage() {
 
         <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
-            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-spider-red">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-spider-red">
               {greeting}
             </p>
             <h1 className="font-heading text-4xl leading-tight md:text-5xl text-spider-white">
@@ -65,17 +65,17 @@ export default function DashboardHomePage() {
                 {firstName}.
               </span>
             </h1>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-spider-silver/60 md:text-base">
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-spider-silver/85 md:text-base">
               Monitor your active form nodes, track responses flowing through the
               web, and deploy new forms when your network needs them.
             </p>
 
             <blockquote className="mt-6 border-l-2 border-spider-red/40 pl-4">
-              <p className="text-sm italic text-spider-silver/50">
+              <p className="text-sm italic text-spider-silver/75">
                 &ldquo;Every form is a node. Every response is a signal.
                 Every connection makes the web stronger.&rdquo;
               </p>
-              <footer className="mt-2 text-[10px] uppercase tracking-[0.25em] text-spider-red/60">
+              <footer className="mt-2 text-[11px] uppercase tracking-[0.25em] text-spider-red/60">
                 — WebVerse Philosophy
               </footer>
             </blockquote>
@@ -92,17 +92,17 @@ export default function DashboardHomePage() {
       </section>
 
       {/* Stat cards */}
-      <section className="mb-10">
-        <div className="mb-4 flex items-center justify-between">
+      <section className="mb-12">
+        <div className="mb-5 flex items-center justify-between">
           <h2 className="font-heading text-base uppercase tracking-[0.15em] text-spider-white">
             Network Overview
           </h2>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-spider-silver/40">
+          <span className="text-[11px] uppercase tracking-[0.2em] text-spider-silver/65">
             Live data
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <StatCard
             label="Total Nodes"
             value={total}
@@ -145,7 +145,7 @@ export default function DashboardHomePage() {
             <h2 className="font-heading text-base uppercase tracking-[0.15em] text-spider-white">
               Active Nodes
             </h2>
-            <p className="mt-1 text-xs text-spider-silver/40">
+            <p className="mt-1 text-xs text-spider-silver/65">
               Form nodes currently in your network
             </p>
           </div>
@@ -162,13 +162,13 @@ export default function DashboardHomePage() {
               <Compass className="h-3.5 w-3.5 text-spider-red" />
               From The Web
             </h2>
-            <p className="mt-1 text-xs text-spider-silver/40">
+            <p className="mt-1 text-xs text-spider-silver/65">
               Public form nodes from other builders
             </p>
           </div>
           <Link
             href="/dashboard/explore"
-            className="hidden items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-spider-red hover:text-spider-redGlow sm:flex"
+            className="hidden items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-spider-red hover:text-spider-redGlow sm:flex"
           >
             Explore all
             <ArrowRight className="h-3 w-3" />

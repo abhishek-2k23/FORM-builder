@@ -81,13 +81,13 @@ export function PasswordSection({ formId, hasPassword }: Props) {
           </p>
         </div>
         {hasPassword && !editing && (
-          <span className="text-[9px] uppercase tracking-[0.25em] text-konoha-akatsuki">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-konoha-akatsuki">
             Active
           </span>
         )}
       </div>
 
-      <p className="text-[11px] leading-relaxed text-muted-foreground">
+      <p className="text-xs leading-relaxed text-muted-foreground">
         {hasPassword
           ? "Respondents must enter the password to view and submit this form."
           : "Lock this form. Only those with the password can fill it out."}
@@ -98,7 +98,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
           <button
             type="button"
             onClick={() => setEditing(true)}
-            className="flex h-9 flex-1 items-center justify-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
+            className="flex h-9 flex-1 items-center justify-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
           >
             Change password
           </button>
@@ -106,7 +106,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
             type="button"
             onClick={clear}
             disabled={setPassword.isPending}
-            className="flex h-9 items-center justify-center gap-1.5 rounded-md border border-konoha-akatsuki/40 px-3 text-[10px] uppercase tracking-[0.18em] text-konoha-akatsuki hover:bg-konoha-akatsuki/10 disabled:opacity-50"
+            className="flex h-9 items-center justify-center gap-1.5 rounded-md border border-konoha-akatsuki/40 px-3 text-[11px] uppercase tracking-[0.18em] text-konoha-akatsuki hover:bg-konoha-akatsuki/10 disabled:opacity-50"
           >
             Remove
           </button>
@@ -136,7 +136,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
               type="button"
               onClick={apply}
               disabled={!value || setPassword.isPending}
-              className="btn-verse flex h-9 flex-1 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[10px] uppercase tracking-[0.18em] text-white shadow-[0_0_16px_rgba(255,23,68,0.25)] disabled:opacity-50 disabled:shadow-none"
+              className="btn-verse flex h-9 flex-1 items-center justify-center gap-2 rounded-md bg-gradient-to-br from-konoha-orange to-[#cc4400] px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-white shadow-[0_0_16px_rgba(255,23,68,0.25)] disabled:opacity-50 disabled:shadow-none"
             >
               {setPassword.isPending ? (
                 <>
@@ -156,7 +156,7 @@ export function PasswordSection({ formId, hasPassword }: Props) {
                   setEditing(false);
                   setValue("");
                 }}
-                className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
+                className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange"
               >
                 Cancel
               </button>

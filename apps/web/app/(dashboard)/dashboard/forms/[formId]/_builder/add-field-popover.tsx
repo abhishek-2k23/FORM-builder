@@ -70,8 +70,8 @@ export function AddFieldPopover({
         onClick={() => setOpen((s) => !s)}
         className={
           variant === "primary"
-            ? "btn-verse flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-konoha-orange/50 bg-konoha-orange/5 px-4 font-heading text-[11px] uppercase tracking-[0.18em] text-konoha-orange hover:border-konoha-orange hover:bg-konoha-orange/10 disabled:opacity-50"
-            : "flex h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:opacity-50"
+            ? "btn-verse flex h-10 w-full items-center justify-center gap-2 rounded-md border border-dashed border-konoha-orange/50 bg-konoha-orange/5 px-4 font-heading text-xs uppercase tracking-[0.18em] text-konoha-orange hover:border-konoha-orange hover:bg-konoha-orange/10 disabled:opacity-50"
+            : "flex h-9 items-center gap-2 rounded-md border border-konoha-forest/60 px-3 text-xs uppercase tracking-[0.18em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:opacity-50"
         }
       >
         <Plus className="h-3.5 w-3.5" />
@@ -106,7 +106,7 @@ export function AddFieldPopover({
               if (!items?.length) return null;
               return (
                 <div key={groupKey} className="mb-2 last:mb-0">
-                  <p className="px-3 pb-1.5 pt-1 text-[9px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
+                  <p className="px-3 pb-1.5 pt-1 text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70">
                     {GROUP_LABELS[groupKey]}
                   </p>
                   {items.map((f) => {
@@ -125,7 +125,7 @@ export function AddFieldPopover({
                           <span className="block text-sm font-medium text-foreground">
                             {f.label}
                           </span>
-                          <span className="block text-[11px] text-muted-foreground">
+                          <span className="block text-xs text-muted-foreground">
                             {f.description}
                           </span>
                         </span>

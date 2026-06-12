@@ -78,7 +78,7 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
             <span className="font-heading text-sm tracking-[0.2em] text-spider-red">
               WEBFORM
             </span>
-            <span className="text-[8px] tracking-[0.3em] text-spider-silver/50">
+            <span className="text-[10px] tracking-[0.3em] text-spider-silver/75">
               VERSE
             </span>
           </div>
@@ -87,7 +87,7 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
         <button
           type="button"
           onClick={onCloseMobile}
-          className="lg:hidden text-spider-silver/50 hover:text-spider-red"
+          className="lg:hidden text-spider-silver/75 hover:text-spider-red"
           aria-label="Close menu"
         >
           <X className="h-5 w-5" />
@@ -96,11 +96,11 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
 
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto px-3 py-6">
-        <p className="mb-3 px-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-spider-silver/30">
+        <p className="mb-4 px-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-spider-silver/60">
           Navigation
         </p>
 
-        <ul className="space-y-1">
+        <ul className="space-y-1.5">
           {navigation.map((item) => {
             const Icon = item.icon;
             const active = item.exact
@@ -112,10 +112,10 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
                 <Link
                   href={item.href}
                   onClick={onCloseMobile}
-                  className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all ${
+                  className={`group relative flex items-center gap-3 rounded-lg px-3 py-3 text-sm transition-all ${
                     active
                       ? "bg-spider-red/10 text-spider-red"
-                      : "text-spider-silver/60 hover:bg-[#1A1A1A]/50 hover:text-spider-white"
+                      : "text-spider-silver/85 hover:bg-[#1A1A1A]/50 hover:text-spider-white"
                   }`}
                 >
                   {active && (
@@ -123,7 +123,7 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
                   )}
                   <Icon
                     className={`h-4 w-4 transition-colors ${
-                      active ? "text-spider-red" : "text-spider-silver/50 group-hover:text-spider-red"
+                      active ? "text-spider-red" : "text-spider-silver/75 group-hover:text-spider-red"
                     }`}
                   />
                   <span className="font-medium tracking-wide">{item.label}</span>
@@ -138,11 +138,11 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
       <div className="mx-3 mb-3 rounded-lg border border-[#1A1A1A] bg-spider-dark/80 p-3">
         <div className="flex items-center gap-2">
           <Zap className="h-3.5 w-3.5 text-spider-red" />
-          <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-spider-red">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-spider-red">
             Web Active
           </p>
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-spider-silver/50">
+        <p className="mt-2 text-xs leading-relaxed text-spider-silver/75">
           All nodes <span className="text-spider-white">connected</span>.
           Network operational.
         </p>
@@ -153,7 +153,7 @@ export function Sidebar({ mobileOpen, onCloseMobile }: SidebarProps) {
         <button
           type="button"
           onClick={() => signOut({ redirectUrl: "/" })}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-spider-silver/50 transition-colors hover:bg-[#1A1A1A]/50 hover:text-spider-red"
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-spider-silver/75 transition-colors hover:bg-[#1A1A1A]/50 hover:text-spider-red"
         >
           <LogOut className="h-4 w-4" />
           Disconnect

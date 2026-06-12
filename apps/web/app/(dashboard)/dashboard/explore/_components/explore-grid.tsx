@@ -59,7 +59,7 @@ export function ExploreGrid() {
             setPage(1);
           }}
         />
-        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
           <Map className="h-3 w-3" />
           {isLoading ? (
             "Loading…"
@@ -114,19 +114,19 @@ export function ExploreGrid() {
             type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page <= 1}
-            className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:cursor-not-allowed disabled:opacity-30"
+            className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:cursor-not-allowed disabled:opacity-30"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Prev
           </button>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             Page <span className="text-konoha-orange">{page}</span> of {totalPages}
           </span>
           <button
             type="button"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page >= totalPages}
-            className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:cursor-not-allowed disabled:opacity-30"
+            className="flex h-9 items-center gap-1.5 rounded-md border border-konoha-forest/60 px-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:border-konoha-orange hover:text-konoha-orange disabled:cursor-not-allowed disabled:opacity-30"
           >
             Next
             <ChevronRight className="h-3.5 w-3.5" />

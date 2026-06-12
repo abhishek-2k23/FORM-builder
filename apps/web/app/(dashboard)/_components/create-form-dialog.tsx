@@ -118,7 +118,7 @@ export function CreateFormDialog({ open, onClose }: Props) {
         <div className="rounded-lg border border-verse-cyan/20 bg-verse-cyan/5 p-3">
           <div className="flex items-start gap-2">
             <Zap className="mt-0.5 h-3.5 w-3.5 shrink-0 text-verse-cyan" />
-            <div className="text-[11px] leading-relaxed text-muted-foreground">
+            <div className="text-xs leading-relaxed text-muted-foreground">
               Your form starts in <span className="text-foreground">draft mode</span>.
               You&apos;ll add fields and configure the node on the next screen,
               then publish when it&apos;s ready to go live.
